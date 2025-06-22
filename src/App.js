@@ -137,7 +137,17 @@ function App() {
       <main>
         {/* Hero Section */}
         <section id="home" className="relative bg-gradient-to-br from-gray-800 to-gray-900 text-white py-20 md:py-32 overflow-hidden rounded-b-xl shadow-lg">
-          <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: 'url(https://placehold.co/1920x1080/4a4a4a/ffffff?text=Futuristic+Cityscape)' }}></div>
+          {/* New background image and adjusted opacity/overlay for legibility */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center" 
+            style={{ 
+              backgroundImage: 'url(/CIty backround 2.jpg)',
+              opacity: 0.4 // Adjusted opacity here
+            }}
+          ></div>
+          {/* Dark overlay to ensure text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 opacity-75"></div>
+
           <div className="container mx-auto px-4 relative z-10 text-center">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
               AVIM: Developing the Future of Autonomous Vehicle Infrastructure.
@@ -298,7 +308,7 @@ function App() {
                     className="rounded-full w-24 h-24 object-cover mb-4 ring-2 ring-orange-300"
                   />
                   <h4 className="text-xl font-semibold text-gray-800">Teddy O'Brien</h4>
-                  <p className="text-orange-600 text-sm mb-2">CEO & Co-founder</p> {/* Updated title */}
+                  <p className="text-orange-600 text-sm mb-2">CEO & Co-founder</p>
                   <p className="text-gray-600 text-center text-sm">
                     Student at CU studying Real Estate and Finance, driving the vision for autonomous vehicle infrastructure.
                   </p>
