@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; // Corrected: changed '=> {' to ' from 'react''
 import {
   ArrowRight, Users, Handshake, DollarSign, Briefcase, Mail, Home, Lightbulb, Info, Newspaper
 } from 'lucide-react'; // Import directly from lucide-react npm package
