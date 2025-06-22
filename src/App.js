@@ -3,6 +3,10 @@ import {
   ArrowRight, Users, Handshake, DollarSign, Briefcase, Mail, Home, Lightbulb, Info, Newspaper
 } from 'lucide-react'; // Import directly from lucide-react npm package
 
+// Removed the 'import AvimLogo from ...' line.
+// Images in the 'public' folder are referenced directly by their path.
+
+
 function App() {
   // State to manage which section is currently active for navigation
   const [activeSection, setActiveSection] = useState('home');
@@ -24,13 +28,27 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans antialiased text-gray-900">
-      {/* Removed Tailwind CSS CDN script and style block from here, now in public/index.html */}
+      {/* Tailwind CSS CDN script - ensures styling works */}
+      <script src="https://cdn.tailwindcss.com"></script>
       
+      {/* Configure Tailwind to use Inter font */}
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+          body {
+            font-family: 'Inter', sans-serif;
+          }
+        `}
+      </style>
+
       {/* Header/Navigation Bar */}
       <header className="bg-white shadow-md py-4 sticky top-0 z-50 rounded-b-xl">
         <nav className="container mx-auto px-4 flex items-center justify-between flex-wrap">
           {/* Logo/Brand Name */}
           <div className="flex items-center flex-shrink-0 text-gray-900 mr-6">
+            {/* AVIM Logo - Directly referenced from public folder */}
+            {/* IMPORTANT: Ensure 'image_00e3bf.png' is in your public folder on GitHub */}
+            <img src="/image_00e3bf.png" alt="AVIM Logo" className="h-8 md:h-10 w-auto mr-3" /> 
             <span className="font-extrabold text-2xl tracking-tight text-orange-700">AVIM</span>
             <span className="text-sm font-medium ml-2 text-gray-600 hidden md:block">
               Autonomous Vehicle Infrastructure Matrix
@@ -126,10 +144,10 @@ function App() {
           <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: 'url(https://placehold.co/1920x1080/4a4a4a/ffffff?text=Futuristic+Cityscape)' }}></div>
           <div className="container mx-auto px-4 relative z-10 text-center">
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
-              AVIM: Powering the Future of <br className="hidden sm:inline" />Autonomous Mobility.
+              AVIM: Developing the Future of Autonomous Vehicle Infrastructure.
             </h1>
             <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90 animate-fade-in-up delay-100">
-              Building the foundational infrastructure – the **Autonomous Vehicle Infrastructure Matrix** – for Waymo, Cruise, and the next generation of self-driving companies.
+              Providing tailored physical real estate and infrastructure solutions for emerging autonomous vehicle and electric fleet industries, starting in key urban markets.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-200">
               <button
@@ -152,31 +170,31 @@ function App() {
         <section className="py-16 bg-white rounded-xl shadow-inner my-8 mx-4">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-gray-800">
-              Building the Future of Autonomous Infrastructure
+              Powering the Next Era of Transportation
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Pillar 1 */}
+              {/* Pillar 1: Fleet Depot Development */}
+              <div className="p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <Home className="h-12 w-12 text-orange-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Fleet Depot Development</h3>
+                <p className="text-gray-600">
+                  Designing, building, and leasing purpose-built facilities optimized for autonomous and electric vehicle operations.
+                </p>
+              </div>
+              {/* Pillar 2: EV & AV Infrastructure Consulting */}
               <div className="p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
                 <Lightbulb className="h-12 w-12 text-orange-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-3 text-gray-800">Intelligent Intersections</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">EV & AV Infrastructure Consulting</h3>
                 <p className="text-gray-600">
-                  Deploying cutting-edge sensor networks and AI-powered traffic management systems for seamless AV flow and enhanced safety at urban intersections.
+                  Guiding companies through facility planning, zoning, and seamless technology integrations for their unique needs.
                 </p>
               </div>
-              {/* Pillar 2 */}
+              {/* Pillar 3: Long-Term Leasing & Asset Management */}
               <div className="p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                <ArrowRight className="h-12 w-12 text-orange-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-3 text-gray-800">Dedicated AV Corridors</h3>
+                <DollarSign className="h-12 w-12 text-orange-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Long-Term Leasing & Management</h3>
                 <p className="text-gray-600">
-                  Designing and implementing optimized lanes and zones exclusively for autonomous vehicles, ensuring efficiency and reliability for commercial fleets.
-                </p>
-              </div>
-              {/* Pillar 3 */}
-              <div className="p-6 bg-gray-100 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                <Users className="h-12 w-12 text-orange-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-3 text-gray-800">Real-time Data & Connectivity</h3>
-                <p className="text-gray-600">
-                  Establishing robust communication networks and edge computing infrastructure to provide AVs with critical, real-time environmental data.
+                  Acting as the trusted partner in operating and managing high-tech vehicle hubs and their essential infrastructure.
                 </p>
               </div>
             </div>
@@ -187,46 +205,46 @@ function App() {
         <section id="solutions" className="py-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl shadow-lg my-8 mx-4">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-              Our Comprehensive Infrastructure Solutions
+              Our Core Infrastructure Services
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Solution Card 1 */}
-              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                <Lightbulb className="h-10 w-10 text-orange-600 mb-4" />
-                <h3 className="text-2xl font-semibold mb-3 text-gray-800">Smart Traffic Management</h3>
-                <p className="text-gray-600 mb-4">
-                  Leveraging AI and IoT to dynamically manage traffic signals, optimize routes, and reduce congestion for both human-driven and autonomous vehicles.
-                </p>
-                <ul className="text-gray-700 text-sm list-disc pl-5">
-                  <li>Real-time traffic flow analysis</li>
-                  <li>Predictive routing algorithms</li>
-                  <li>Adaptive signal control</li>
-                </ul>
-              </div>
-              {/* Solution Card 2 */}
-              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                <Info className="h-10 w-10 text-orange-600 mb-4" />
-                <h3 className="text-2xl font-semibold mb-3 text-gray-800">V2X Communication Systems</h3>
-                <p className="text-gray-600 mb-4">
-                  Developing vehicle-to-everything (V2X) communication infrastructure, enabling seamless data exchange between AVs, infrastructure, and pedestrians.
-                </p>
-                <ul className="text-gray-700 text-sm list-disc pl-5">
-                  <li>Low-latency data transmission</li>
-                  <li>Enhanced situational awareness</li>
-                  <li>Standardized communication protocols</li>
-                </ul>
-              </div>
-              {/* Solution Card 3 */}
+              {/* Solution Card 1: Fleet Depot Development */}
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
                 <Home className="h-10 w-10 text-orange-600 mb-4" />
-                <h3 className="text-2xl font-semibold mb-3 text-gray-800">Modular Deployment Units</h3>
+                <h3 className="text-2xl font-semibold mb-3 text-gray-800">Fleet Depot Development</h3>
                 <p className="text-gray-600 mb-4">
-                  Designing adaptable, scalable infrastructure modules for quick and efficient deployment in diverse urban and logistical environments.
+                  End-to-end development of physical real estate tailored for autonomous and electric vehicle operations, including charging, storage, maintenance, and dispatch facilities.
                 </p>
                 <ul className="text-gray-700 text-sm list-disc pl-5">
-                  <li>Rapid installation & integration</li>
-                  <li>Cost-effective scalability</li>
-                  <li>Minimal urban disruption</li>
+                  <li>Site selection & acquisition</li>
+                  <li>Custom facility design & build</li>
+                  <li>Integration with AV/EV operational needs</li>
+                </ul>
+              </div>
+              {/* Solution Card 2: EV & AV Infrastructure Consulting */}
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <Lightbulb className="h-10 w-10 text-orange-600 mb-4" />
+                <h3 className="text-2xl font-semibold mb-3 text-gray-800">EV & AV Infrastructure Consulting</h3>
+                <p className="text-gray-600 mb-4">
+                  Expert guidance for companies navigating the complexities of AV/EV infrastructure, from initial planning to regulatory compliance and technology integration.
+                </p>
+                <ul className="text-gray-700 text-sm list-disc pl-5">
+                  <li>Facility needs assessment</li>
+                  <li>Zoning and permitting support</li>
+                  <li>Technology integration strategy</li>
+                </ul>
+              </div>
+              {/* Solution Card 3: Long-Term Leasing & Asset Management */}
+              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                <DollarSign className="h-10 w-10 text-orange-600 mb-4" />
+                <h3 className="text-2xl font-semibold mb-3 text-gray-800">Long-Term Leasing & Asset Management</h3>
+                <p className="text-gray-600 mb-4">
+                  Providing flexible leasing models and comprehensive asset management services for high-tech vehicle hubs, ensuring optimal performance and value.
+                </p>
+                <ul className="text-gray-700 text-sm list-disc pl-5">
+                  <li>Customizable lease agreements</li>
+                  <li>Operational partnership models</li>
+                  <li>Infrastructure lifecycle management</li>
                 </ul>
               </div>
               {/* Add more solution cards as needed */}
@@ -247,12 +265,12 @@ function App() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-800">About AVIM</h2>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-12">
-              AVIM (Autonomous Vehicle Infrastructure Matrix) is at the forefront of designing, developing, and deploying the physical and digital infrastructure essential for the widespread adoption of autonomous vehicles. We envision a future where urban and logistical environments seamlessly support self-driving technology, enhancing safety, efficiency, and sustainability.
+              AVIM is an infrastructure development company focused on the critical needs of emerging autonomous vehicle (AV) and electric fleet industries. As these technologies scale, they require specialized physical real estate tailored to operations like charging, storage, servicing, and dispatching. AVIM is working to provide that essential infrastructure, starting in key urban markets.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
                 <img
-                  src="https://placehold.co/600x400/8c8c8c/ffffff?text=Our+Vision"
+                  src="https://placehold.co/600x400/8c8c8c/ffffff?text=AV+Depot+Concept"
                   alt="AVIM's Vision for Autonomous Infrastructure"
                   className="rounded-lg shadow-md mx-auto mb-6 md:mb-0 w-full h-auto object-cover"
                 />
@@ -260,11 +278,11 @@ function App() {
               <div className="text-left">
                 <h3 className="text-2xl font-semibold mb-4 text-gray-800">Our Mission</h3>
                 <p className="text-gray-700 mb-4">
-                  To accelerate the safe and efficient integration of autonomous vehicles into daily life by building robust, intelligent, and scalable infrastructure solutions. We bridge the gap between cutting-edge AV technology and real-world operational environments.
+                  To accelerate the safe and efficient integration of autonomous and electric fleets by developing and managing purpose-built physical infrastructure that meets their unique operational demands.
                 </p>
-                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Our Expertise</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Why It Matters</h3>
                 <p className="text-gray-700">
-                  Our team comprises visionary engineers, urban planners, AI specialists, and logistics experts with deep experience in autonomous systems, smart city development, and complex infrastructure projects. We're committed to pioneering solutions that meet the unique demands of the autonomous future.
+                  As autonomous and electric vehicle adoption grows, cities and companies urgently need new types of infrastructure. AVIM positions itself as the behind-the-scenes engine—quietly building the depots, charging yards, and servicing facilities that power the future of transportation.
                 </p>
               </div>
             </div>
@@ -275,7 +293,7 @@ function App() {
                 {/* Teddy O'Brien's Profile */}
                 <div className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center">
                   <img
-                    src="uploaded:IMG_6843.JPG-29c56758-3f0e-4f9d-83c3-aef1a599b946" // Your uploaded image
+                    src="/IMG_6843.JPG" // Direct reference to file in public folder
                     alt="Teddy O'Brien"
                     className="rounded-full w-24 h-24 object-cover mb-4 ring-2 ring-orange-300"
                   />
@@ -324,31 +342,31 @@ function App() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-800">Partner with AVIM</h2>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-12">
-              Collaboration is key to building the future of autonomous mobility. AVIM is actively seeking strategic partnerships with a range of organizations to accelerate the deployment and scaling of autonomous vehicle infrastructure.
+              Collaboration is essential for scaling autonomous and electric fleets. AVIM partners with AV companies, electric fleet operators, and urban developers to provide the specialized infrastructure needed for efficient and expansive operations.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Partner Type 1 */}
+              {/* Partner Type 1: AV & Electric Fleet Operators */}
               <div className="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
                 <Handshake className="h-10 w-10 text-orange-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-3 text-gray-800">Autonomous Vehicle Developers</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">AV & Electric Fleet Operators</h3>
                 <p className="text-gray-600">
-                  Integrate your AVs with our intelligent infrastructure for enhanced performance, safety, and expanded operational design domains.
+                  Secure purpose-built depots for charging, maintenance, and dispatch, tailored to your operational needs and growth plans.
                 </p>
               </div>
-              {/* Partner Type 2 */}
+              {/* Partner Type 2: Urban Planners & Real Estate Developers */}
               <div className="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
                 <Home className="h-10 w-10 text-orange-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-3 text-gray-800">Smart City Initiatives & Municipalities</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Urban Planners & Developers</h3>
                 <p className="text-gray-600">
-                  Co-create urban environments that are ready for autonomous fleets, improving public transportation, logistics, and quality of life.
+                  Integrate next-gen mobility infrastructure into smart city initiatives and large-scale urban development projects.
                 </p>
               </div>
-              {/* Partner Type 3 */}
+              {/* Partner Type 3: Technology & Solution Providers */}
               <div className="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
                 <Lightbulb className="h-10 w-10 text-orange-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-3 text-gray-800">Technology & Research Institutions</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-800">Technology & Solution Providers</h3>
                 <p className="text-gray-600">
-                  Collaborate on R&D for next-generation infrastructure, pushing the boundaries of what's possible in AV integration.
+                  Collaborate on integrating advanced charging, connectivity, and fleet management technologies into our physical hubs.
                 </p>
               </div>
             </div>
@@ -368,15 +386,15 @@ function App() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-800">Join Our Team</h2>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-12">
-              Are you passionate about shaping the future of transportation? AVIM is looking for talented, driven individuals to join our growing team. Be a part of building the foundational infrastructure that will enable autonomous vehicles worldwide.
+              Are you passionate about building the foundational real estate and infrastructure for the future of transportation? Join AVIM and help us create the physical backbone for autonomous and electric fleets.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Job Opening 1 */}
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 text-left">
-                <h3 className="text-2xl font-semibold mb-3 text-gray-800">Infrastructure Engineer (Hardware)</h3>
-                <p className="text-orange-600 text-md mb-3">Full-time | San Antonio, TX</p>
+                <h3 className="text-2xl font-semibold mb-3 text-gray-800">Real Estate Development Lead</h3>
+                <p className="text-orange-600 text-md mb-3">Full-time | Denver, CO</p>
                 <p className="text-gray-700 mb-4">
-                  Design and deploy physical sensor networks, V2X communication units, and edge computing nodes in urban environments.
+                  Lead site acquisition, zoning, and development for our initial AV/EV fleet depots in target urban markets.
                 </p>
                 <a href="#contact" onClick={() => handleNavClick('contact', 'contact')} className="text-orange-600 hover:underline flex items-center">
                   Apply Now <ArrowRight className="ml-1 h-4 w-4" />
@@ -384,10 +402,10 @@ function App() {
               </div>
               {/* Job Opening 2 */}
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 text-left">
-                <h3 className="text-2xl font-semibold mb-3 text-gray-800">AI/ML Software Engineer (Traffic Optimization)</h3>
-                <p className="text-orange-600 text-md mb-3">Full-time | Remote (US-based)</p>
+                <h3 className="text-2xl font-semibold mb-3 text-gray-800">Infrastructure Project Manager</h3>
+                <p className="text-orange-600 text-md mb-3">Full-time | Flexible (US-based)</p>
                 <p className="text-gray-700 mb-4">
-                  Develop and implement AI/ML algorithms for real-time traffic prediction, signal optimization, and autonomous vehicle pathfinding.
+                  Oversee the design, construction, and integration of charging, servicing, and connectivity infrastructure within AV/EV depots.
                 </p>
                 <a href="#contact" onClick={() => handleNavClick('contact', 'contact')} className="text-orange-600 hover:underline flex items-center">
                   Apply Now <ArrowRight className="ml-1 h-4 w-4" />
@@ -411,25 +429,25 @@ function App() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-800">For Investors</h2>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-12">
-              AVIM represents a unique investment opportunity at the intersection of autonomous technology and critical infrastructure development. We are building the foundational layer for a multi-trillion dollar industry.
+              AVIM offers a unique investment opportunity at the forefront of the emerging autonomous and electric fleet real estate sector. We are building the critical physical infrastructure needed to enable the scaling of this multi-trillion dollar industry.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="text-left">
                 <h3 className="text-2xl font-semibold mb-4 text-gray-800">The Market Opportunity</h3>
                 <p className="text-gray-700 mb-4">
-                  The autonomous vehicle market is poised for exponential growth, but its full potential is bottlenecked by a lack of integrated physical and digital infrastructure. AVIM addresses this critical need, positioning us at the core of future mobility ecosystems.
+                  As autonomous vehicle adoption grows, cities and companies urgently need new types of infrastructure for operations like charging, storage, servicing, and dispatching. AVIM provides this essential physical real estate, positioning us at the core of future mobility ecosystems.
                 </p>
-                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Our Traction & Vision</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800">Initial Focus & Traction</h3>
                 <p className="text-gray-700 mb-4">
-                  We are in early discussions for pilot programs with leading AV companies and forward-thinking municipalities. Our vision extends beyond individual smart components to a fully interconnected Autonomous Vehicle Infrastructure Matrix that is scalable, resilient, and ready for mass deployment.
+                  We are strategically focusing on key urban markets, starting with **Denver** as our launch city, with plans for expansion into **Austin, Phoenix, San Francisco, and Miami**. Our site criteria prioritize industrial-zoned land with highway access and favorable real estate conditions.
                 </p>
                 <p className="text-gray-700">
-                  <span className="font-bold">Team Strength:</span> Our leadership brings decades of combined experience in autonomous systems, urban development, and successful tech ventures.
+                  <span className="font-bold">Team Strength:</span> Our leadership combines expertise in real estate, finance, autonomous systems, and urban development, uniquely positioning AVIM to execute on this critical market need.
                 </p>
               </div>
               <div>
                 <img
-                  src="https://placehold.co/600x400/5e5e5e/ffffff?text=Investment+Opportunity"
+                  src="https://placehold.co/600x400/5e5e5e/ffffff?text=AV+Real+Estate"
                   alt="Investment Opportunity in AVIM"
                   className="rounded-lg shadow-md mx-auto w-full h-auto object-cover"
                 />
@@ -451,20 +469,20 @@ function App() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-gray-800">News & Insights</h2>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-12">
-              Stay up-to-date with the latest from AVIM and developments in the autonomous infrastructure space.
+              Stay up-to-date with the latest from AVIM and developments in autonomous and electric fleet infrastructure.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* News Article 1 */}
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 text-left">
                 <img
-                  src="https://placehold.co/400x250/c0c0c0/ffffff?text=News+1"
+                  src="https://placehold.co/400x250/c0c0c0/ffffff?text=Denver+Site+Plan"
                   alt="News Placeholder Image"
                   className="rounded-md mb-4 w-full h-40 object-cover"
                 />
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">AVIM Announces Pilot Program Discussions</h3>
+                <h3 className="text-xl font-semibold mb-2 text-gray-800">AVIM Identifies First Depot Site in Denver</h3>
                 <p className="text-gray-600 text-sm mb-4">June 20, 2025</p>
                 <p className="text-gray-700 text-base mb-4 line-clamp-3">
-                  We're excited to announce that AVIM has entered into preliminary discussions for our first large-scale pilot program with a major autonomous vehicle developer...
+                  We're excited to announce the identification of our initial site in Denver, meeting key criteria for future AV/EV fleet operations...
                 </p>
                 <a href="#" className="text-orange-600 hover:underline flex items-center">
                   Read More <ArrowRight className="ml-1 h-4 w-4" />
@@ -473,14 +491,14 @@ function App() {
               {/* News Article 2 */}
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 text-left">
                 <img
-                  src="https://placehold.co/400x250/c0c0c0/ffffff?text=News+2"
+                  src="https://placehold.co/400x250/c0c0c0/ffffff?text=EV+Charging"
                   alt="News Placeholder Image"
                   className="rounded-md mb-4 w-full h-40 object-cover"
                 />
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">The Future of Smart Intersections</h3>
+                <h3 className="text-xl font-semibold mb-2 text-gray-800">The Role of Purpose-Built Charging in Fleet Scaling</h3>
                 <p className="text-gray-600 text-sm mb-4">June 15, 2025</p>
                 <p className="text-gray-700 text-base mb-4 line-clamp-3">
-                  Our latest blog post delves into how intelligent intersections are key to unlocking seamless urban autonomous mobility...
+                  Our latest insight piece explores the critical need for specialized charging infrastructure as electric fleets rapidly expand...
                 </p>
                 <a href="#" className="text-orange-600 hover:underline flex items-center">
                   Read More <ArrowRight className="ml-1 h-4 w-4" />
@@ -489,14 +507,14 @@ function App() {
               {/* News Article 3 */}
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 text-left">
                 <img
-                  src="https://placehold.co/400x250/c0c0c0/ffffff?text=News+3"
+                  src="https://placehold.co/400x250/c0c0c0/ffffff?text=Smart+Logistics"
                   alt="News Placeholder Image"
                   className="rounded-md mb-4 w-full h-40 object-cover"
                 />
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">AVIM Attends Global Mobility Summit</h3>
+                <h3 className="text-xl font-semibold mb-2 text-gray-800">AVIM at Future of Logistics Summit</h3>
                 <p className="text-gray-600 text-sm mb-4">June 10, 2025</p>
                 <p className="text-gray-700 text-base mb-4 line-clamp-3">
-                  Members of the AVIM leadership team recently participated in the Global Mobility Summit, discussing the future of infrastructure...
+                  Members of the AVIM team shared insights on infrastructure development for autonomous logistics at the recent industry summit...
                 </p>
                 <a href="#" className="text-orange-600 hover:underline flex items-center">
                   Read More <ArrowRight className="ml-1 h-4 w-4" />
