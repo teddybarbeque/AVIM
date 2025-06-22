@@ -3,9 +3,6 @@ import {
   ArrowRight, Users, Handshake, DollarSign, Briefcase, Mail, Home, Lightbulb, Info, Newspaper
 } from 'lucide-react'; // Import directly from lucide-react npm package
 
-// Removed the 'import AvimLogo from ...' line.
-// Images in the 'public' folder are referenced directly by their path.
-
 
 function App() {
   // State to manage which section is currently active for navigation
@@ -46,10 +43,9 @@ function App() {
         <nav className="container mx-auto px-4 flex items-center justify-between flex-wrap">
           {/* Logo/Brand Name */}
           <div className="flex items-center flex-shrink-0 text-gray-900 mr-6">
-            {/* AVIM Logo - Directly referenced from public folder */}
-            {/* IMPORTANT: Ensure 'image_00e3bf.png' is in your public folder on GitHub */}
-            <img src="/image_00e3bf.png" alt="AVIM Logo" className="h-8 md:h-10 w-auto mr-3" /> 
-            <span className="font-extrabold text-2xl tracking-tight text-orange-700">AVIM</span>
+            {/* AVIM Logo */}
+            {/* IMPORTANT: Ensure 'AVIM Logo.jpg' is in your public folder on GitHub */}
+            <img src="/AVIM Logo.jpg" alt="AVIM Logo" className="h-8 md:h-10 w-auto" /> 
             <span className="text-sm font-medium ml-2 text-gray-600 hidden md:block">
               Autonomous Vehicle Infrastructure Matrix
             </span>
@@ -148,6 +144,10 @@ function App() {
             </h1>
             <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90 animate-fade-in-up delay-100">
               Providing tailored physical real estate and infrastructure solutions for emerging autonomous vehicle and electric fleet industries, starting in key urban markets.
+            </p>
+            {/* New Slogan */}
+            <p className="text-2xl md:text-3xl font-semibold mb-10 text-white animate-fade-in-up delay-200">
+              Powering the future that drives you.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up delay-200">
               <button
@@ -298,7 +298,7 @@ function App() {
                     className="rounded-full w-24 h-24 object-cover mb-4 ring-2 ring-orange-300"
                   />
                   <h4 className="text-xl font-semibold text-gray-800">Teddy O'Brien</h4>
-                  <p className="text-orange-600 text-sm mb-2">Founder</p>
+                  <p className="text-orange-600 text-sm mb-2">CEO & Co-founder</p> {/* Updated title */}
                   <p className="text-gray-600 text-center text-sm">
                     Student at CU studying Real Estate and Finance, driving the vision for autonomous vehicle infrastructure.
                   </p>
