@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // Corrected: changed '=> {' to ' from 'react''
+import React, { useState } from 'react';
 import {
   ArrowRight, Users, Handshake, DollarSign, Briefcase, Mail, Home, Lightbulb, Info, Newspaper
 } from 'lucide-react'; // Import directly from lucide-react npm package
@@ -141,8 +141,8 @@ function App() {
           <div 
             className="absolute inset-0 bg-cover bg-center" 
             style={{ 
-              backgroundImage: 'url(/CIty backround 2.jpg)',
-              opacity: 0.4 // Adjusted opacity here
+              backgroundImage: 'url(/CIty backround 2.avif)', // Changed to .avif
+              opacity: 0.4 
             }}
           ></div>
           {/* Dark overlay to ensure text contrast */}
