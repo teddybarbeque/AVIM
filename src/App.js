@@ -16,7 +16,8 @@ import {
 } from 'chart.js';
 import {
     ArrowRight, Users, Handshake, DollarSign, Briefcase, Mail, Home, Lightbulb, Info, Newspaper,
-    MapPin, CloudLightning, Wrench, Building, Rocket, Zap, HardHat, Scale, Layout, Globe, Package, CheckCircle
+    MapPin, CloudLightning, Wrench, Building, Rocket, Zap, HardHat, Scale, Layout, Globe, Package, CheckCircle,
+    HardDrive // New icon for data storage
 } from 'lucide-react'; // Import directly from lucide-react npm package
 
 // Register Chart.js components
@@ -365,9 +366,9 @@ function App() {
                     <button onClick={() => {
                          handleNavClick('home', 'infographic-section');
                     }} className="bg-white rounded-2xl shadow-lg p-6 text-center kpi-card flex flex-col items-center justify-center">
-                        <div className="text-5xl mb-4 text-[#FF7F00]">📊</div>
-                        <h3 className="text-xl font-bold mb-2 text-[#333333]">Our Vision & Data</h3>
-                        <p className="text-gray-700">Deep insights into the market need for AV infrastructure.</p>
+                        <div className="text-5xl mb-4 text-[#FF7F00]"><HardDrive /></div> {/* Changed icon to HardDrive */}
+                        <h3 className="text-xl font-bold mb-2 text-[#333333]">AV Data & Operations Hubs</h3> {/* Changed title */}
+                        <p className="text-gray-700">Providing physical hubs for secure data storage, high-volume charging, and integrated operational support.</p> {/* Changed description */}
                     </button>
                 </div>
             </section>
@@ -435,7 +436,7 @@ function App() {
                                 </div>
                                 <div className="text-4xl text-center my-4">↓</div>
                                 <div className="grid grid-cols-2 gap-4 text-sm">
-                                    <div className="bg-white/20 p-3 rounded">Mapping Vendor</div>
+                                    <div className="bg-white/20 p-3 rounded">Mapping Vendor</div> {/* Changed back to Mapping Vendor */}
                                     <div className="bg-white/20 p-3 rounded">Charging Network</div>
                                     <div className="bg-white/20 p-3 rounded">Maintenance Shop</div>
                                     <div className="bg-white/20 p-3 rounded">Software Provider</div>
@@ -458,7 +459,7 @@ function App() {
                                 <div className="text-4xl text-center my-4">↓</div>
                                 <div className="bg-white/80 p-6 rounded-lg text-[#333333]">
                                     <div className="font-extrabold text-lg">Integrated Infrastructure Partner</div>
-                                     <p className="mt-2 text-sm">One partner for mapping, charging, maintenance, and data.</p>
+                                     <p className="mt-2 text-sm">One partner for data, charging, maintenance, and operations.</p>
                                 </div>
                                  <p className="mt-4 text-sm text-gray-200">Simple, scalable, and cost-effective single-point solution.</p>
                             </div>
@@ -471,12 +472,12 @@ function App() {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         
                         <div className="bg-white rounded-2xl shadow-lg p-6 kpi-card">
-                            <div className="text-4xl mb-4">🗺️</div>
-                            <h3 className="text-xl font-bold mb-2 text-[#808080]">Dynamic Mapping & Data</h3>
-                            <p className="text-sm mb-4">While major AV companies build proprietary HD maps, a significant opportunity exists in providing "mapping-as-a-service"—offering real-time updates, data annotation, and dynamic validation to keep maps current with ever-changing road conditions.</p>
+                            <div className="text-4xl mb-4"><HardDrive /></div>
+                            <h3 className="text-xl font-bold mb-2 text-[#808080]">AV Data Management & Storage</h3>
+                            <p className="text-sm mb-4">Autonomous vehicles generate petabytes of data daily. We provide on-site, secure data storage and management solutions, enabling AV companies to offload massive data burdens and focus on critical data analysis.</p>
                             <div className="bg-gray-100 p-4 rounded-lg">
                                 <p className="font-bold">Key Challenge:</p>
-                                <p className="text-sm">HD Mapping costs can reach <span className="font-black text-[#FF7F00]">$1,000 per 0.62 miles</span> (per kilometer), requiring constant updates.</p>
+                                <p className="text-sm">AVs generate <span className="font-black text-[#FF7F00]">petabytes of data daily</span>, requiring robust and secure on-site storage and processing infrastructure.</p>
                             </div>
                         </div>
                         
@@ -523,7 +524,6 @@ function App() {
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                         <div>
-                            {/* Corrected image path to match provided file name */}
                             <img
                                 src="/CIty backround 2.avif"
                                 alt="AVIM's Vision for Autonomous Infrastructure"
@@ -640,7 +640,7 @@ function App() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Job Opening 1 */}
                         <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 text-left">
-                            <h3 className="text-2xl font-semibold mb-3 text-[#333333]">Real Estate Development Lead</h3>
+                            <h3 className="text-xl font-semibold mb-3 text-[#333333]">Real Estate Development Lead</h3>
                             <p className="text-orange-600 text-md mb-3">Full-time | Denver, CO</p>
                             <p className="text-gray-700 mb-4">
                                 Lead site acquisition, zoning, and development for our initial AV/EV fleet depots in target urban markets.
@@ -651,7 +651,7 @@ function App() {
                         </div>
                         {/* Job Opening 2 */}
                         <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 text-left">
-                            <h3 className="text-2xl font-semibold mb-3 text-[#333333]">Infrastructure Project Manager</h3>
+                            <h3 className="text-xl font-semibold mb-3 text-[#333333]">Infrastructure Project Manager</h3>
                             <p className="text-orange-600 text-md mb-3">Full-time | Flexible (US-based)</p>
                             <p className="text-gray-700 mb-4">
                                 Oversee the design, construction, and integration of charging, servicing, and connectivity infrastructure within AV/EV depots.
@@ -678,11 +678,11 @@ function App() {
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                         <div className="text-left">
-                            <h3 className="text-2xl font-semibold mb-4 text-[#333333]">The Market Opportunity</h3>
+                            <h3 className="text-xl font-semibold mb-4 text-[#333333]">The Market Opportunity</h3>
                             <p className="text-gray-700 mb-4">
                                 As autonomous vehicle adoption grows, cities and companies urgently need new types of infrastructure for operations like charging, storage, servicing, and dispatching. AVIM provides this essential physical real estate, positioning us at the core of future mobility ecosystems.
                             </p>
-                            <h3 className="text-2xl font-semibold mb-4 text-[#333333]">Initial Focus & Traction</h3>
+                            <h3 className="text-xl font-semibold mb-4 text-[#333333]">Initial Focus & Traction</h3>
                             <p className="text-gray-700 mb-4">
                                 We are strategically focusing on key urban markets, starting with <span className="font-bold">Denver</span> as our launch city, with plans for expansion into <span className="font-bold">Austin, Phoenix, San Francisco, and Miami</span>. Our site criteria prioritize industrial-zoned land with highway access and favorable real estate conditions.
                             </p>
@@ -692,14 +692,14 @@ function App() {
                         </div>
                         <div>
                             <img
-                                src="/Vertiport photo.png" // Updated image source here to PNG
+                                src="/Vertiport photo.png" // Corrected to PNG extension
                                 alt="Vertiport Infrastructure by AVIM"
                                 className="rounded-lg shadow-md mx-auto w-full h-auto object-cover"
                             />
                         </div>
                     </div>
                     <div className="mt-12">
-                        <button onClick={() => handleNavClick('home', 'contact')} className="bg-orange-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center mx-auto">
+                        <button onClick={() => handleNavClick('home', 'contact')} className="bg-[#FF7F00] text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center mx-auto">
                             Request Investor Deck <DollarSign className="ml-2 h-5 w-5" />
                         </button>
                     </div>
