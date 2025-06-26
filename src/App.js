@@ -523,7 +523,7 @@ function App() {
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                         <div>
-                            {/* Replaced placeholder image with City background 2.avif as per screenshot. Assuming it's in public folder. */}
+                            {/* Corrected image path to match provided file name */}
                             <img
                                 src="/CIty backround 2.avif"
                                 alt="AVIM's Vision for Autonomous Infrastructure"
@@ -692,8 +692,8 @@ function App() {
                         </div>
                         <div>
                             <img
-                                src="https://placehold.co/600x400/5e5e5e/ffffff?text=AV+Real+Estate"
-                                alt="Investment Opportunity in AVIM"
+                                src="/Vertiport photo.png" // Updated image source here to PNG
+                                alt="Vertiport Infrastructure by AVIM"
                                 className="rounded-lg shadow-md mx-auto w-full h-auto object-cover"
                             />
                         </div>
@@ -953,7 +953,7 @@ function App() {
         <>
             {/* Hero Section */}
             <section id="hero" className="text-center my-12 md:my-20 py-16 rounded-3xl bg-gradient-to-br from-[#808080] to-[#A0A0A0] text-white shadow-xl">
-                <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">Elevating Vertiport Infrastructure</h1>
+                <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">Elevating Vertiport Infrastructure</h1> {/* Simplified title */}
                 <p className="text-xl md:text-2xl mt-4 font-semibold max-w-4xl mx-auto">AVIM is pioneering the development and management of advanced vertiports and heli-pads to power the coming era of air taxis.</p>
                 <button onClick={() => {
                     setTimeout(() => {
