@@ -492,8 +492,8 @@ function App() {
                         </div>
 
                         <div className="bg-white rounded-2xl shadow-lg p-6 kpi-card">
-                            <div className="text-4xl mb-4">🔧</div>
-                            <h3 className="text-xl font-bold mb-2 text-[#FF7F00]">Specialized Maintenance</h3>
+                            <div className="text-4xl mb-4">🔧</div> {/* Icon is now orange */}
+                            <h3 className="text-xl font-bold mb-2 text-[#333333]">Specialized Maintenance</h3> {/* Heading is now dark grey */}
                             <p className="text-sm mb-4">AV maintenance is highly complex, requiring AI-driven predictive diagnostics and precise calibration of sensitive sensors like LiDAR and cameras. A specialized service can provide this expertise more efficiently than in-house teams.</p>
                             <div className="bg-gray-100 p-4 rounded-lg">
                                 <p className="font-bold">Key Requirement:</p>
@@ -640,7 +640,7 @@ function App() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Job Opening 1 */}
                         <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 text-left">
-                            <h3 className="text-xl font-semibold mb-3 text-[#333333]">Real Estate Development Lead</h3>
+                            <h3 className="text-2xl font-semibold mb-3 text-[#333333]">Real Estate Development Lead</h3>
                             <p className="text-orange-600 text-md mb-3">Full-time | Denver, CO</p>
                             <p className="text-gray-700 mb-4">
                                 Lead site acquisition, zoning, and development for our initial AV/EV fleet depots in target urban markets.
@@ -651,7 +651,7 @@ function App() {
                         </div>
                         {/* Job Opening 2 */}
                         <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 text-left">
-                            <h3 className="text-xl font-semibold mb-3 text-[#333333]">Infrastructure Project Manager</h3>
+                            <h3 className="text-2xl font-semibold mb-3 text-[#333333]">Infrastructure Project Manager</h3>
                             <p className="text-orange-600 text-md mb-3">Full-time | Flexible (US-based)</p>
                             <p className="text-gray-700 mb-4">
                                 Oversee the design, construction, and integration of charging, servicing, and connectivity infrastructure within AV/EV depots.
