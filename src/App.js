@@ -15,7 +15,8 @@ import {
     BarController // Import BarController
 } from 'chart.js';
 import {
-    ArrowRight, Users, Handshake, DollarSign, Briefcase, Mail, Home, Lightbulb, Info, Newspaper
+    ArrowRight, Users, Handshake, DollarSign, Briefcase, Mail, Home, Lightbulb, Info, Newspaper,
+    MapPin, CloudLightning, Wrench, Building, Rocket, Zap, HardHat, Scale, Layout, Globe, Package, CheckCircle
 } from 'lucide-react'; // Import directly from lucide-react npm package
 
 // Register Chart.js components
@@ -343,7 +344,7 @@ function App() {
                 <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">Empowering the Future of Autonomous Mobility</h1>
                 <p className="text-xl md:text-2xl mt-4 font-semibold max-w-4xl mx-auto">AVIM provides the essential infrastructure solutions that enable autonomous vehicle companies to scale efficiently and focus on their core technology.</p>
                 <button onClick={() => {
-                    handleNavClick('home', 'services');
+                    handleNavClick('home', 'services'); // Changed from direct setCurrentPage to handleNavClick
                 }} className="mt-8 inline-block bg-white text-[#FF7F00] font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-gray-100 transition-colors">Discover Our Solutions</button>
             </section>
 
@@ -522,8 +523,9 @@ function App() {
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                         <div>
+                            {/* Replaced placeholder image with City background 2.avif as per screenshot. Assuming it's in public folder. */}
                             <img
-                                src="https://placehold.co/600x400/8c8c8c/ffffff?text=AV+Depot+Concept"
+                                src="/CIty backround 2.avif"
                                 alt="AVIM's Vision for Autonomous Infrastructure"
                                 className="rounded-lg shadow-md mx-auto mb-6 md:mb-0 w-full h-auto object-cover"
                             />
@@ -874,18 +876,18 @@ function App() {
                         <p className="text-lg mb-6">Our state-of-the-art charging depots are strategically located and engineered for high throughput, supporting rapid turnaround times for electric autonomous fleets.</p>
                         
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-[#333333]">
-                            <div className="process-card">
-                                <div className="process-card-icon">⚡</div>
+                            <div className="process-card p-6 bg-white rounded-lg shadow-md flex flex-col items-center">
+                                <Zap className="process-card-icon" />
                                 <h4 className="text-xl font-bold mb-2">Smart Charging Systems</h4>
                                 <p className="text-gray-700 text-sm">We deploy high-power DC fast chargers and intelligent energy management systems to optimize charging schedules, minimize costs, and maximize fleet availability.</p>
                             </div>
-                            <div className="process-card">
-                                <div className="process-card-icon">🤖</div>
+                            <div className="process-card p-6 bg-white rounded-lg shadow-md flex flex-col items-center">
+                                <Users className="process-card-icon" /> {/* Using Users as a generic 'automation' icon */}
                                 <h4 className="text-xl font-bold mb-2">Automated Vehicle Handling</h4>
                                 <p className="text-gray-700 text-sm">Developing robotics and automated systems for vehicle movement within depots, reducing human intervention for parking, charging connection, and queuing.</p>
                             </div>
-                            <div className="process-card">
-                                <div className="process-card-icon">🚿</div>
+                            <div className="process-card p-6 bg-white rounded-lg shadow-md flex flex-col items-center">
+                                <CheckCircle className="process-card-icon" /> {/* Using CheckCircle for 'cleaning' */}
                                 <h4 className="text-xl font-bold mb-2">Integrated Cleaning & Staging</h4>
                                 <p className="text-gray-700 text-sm">Automated interior and exterior cleaning bays are seamlessly integrated into the depot flow, ensuring vehicles are clean and ready for immediate redeployment.</p>
                             </div>
@@ -899,21 +901,21 @@ function App() {
                         <p className="text-lg mb-6">Our maintenance centers are equipped with cutting-edge technology and staffed by expert technicians to handle the unique demands of autonomous vehicle upkeep.</p>
                         
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-[#333333]">
-                            <div className="process-card">
-                                <div className="process-card-icon">🔍</div>
+                            <div className="process-card p-6 bg-white rounded-lg shadow-md flex flex-col items-center">
+                                <Info className="process-card-icon" /> {/* Using Info for diagnostics */}
                                 <h4 className="text-xl font-bold mb-2">AI-Driven Diagnostics</h4>
                                 <p className="text-gray-700 text-sm">Utilizing AI-powered cameras and sensor data analysis for automated, rapid, and precise detection of vehicle issues, from tire wear to sensor anomalies.</p>
                             </div>
-                            <div className="process-card">
-                                <div className="process-card-icon">⚙️</div>
+                            <div className="process-card p-6 bg-white rounded-lg shadow-md flex flex-col items-center">
+                                <Wrench className="process-card-icon" /> {/* Using Wrench for calibration */}
                                 <h4 className="text-xl font-bold mb-2">Precision Sensor Calibration</h4>
                                 <p className="text-gray-700 text-sm">Advanced calibration labs ensure LiDAR, camera, and radar sensors maintain centimeter-level accuracy, crucial for AV safety and performance. We recommend annual recalibration for critical sensors.</p>
                             </div>
-                            <div className="process-card">
-                                <div className="process-card-icon">🔄</div>
+                            <div className="process-card p-6 bg-white rounded-lg shadow-md flex flex-col items-center">
+                                <Package className="process-card-icon" /> {/* Using Package for proactive/predictive repair */}
                                 <h4 className="text-xl font-bold mb-2">Proactive & Predictive Repair</h4>
                                 <p className="text-gray-700 text-sm">Integrating predictive maintenance tools to anticipate component failures before they occur, scheduling repairs to minimize downtime and prevent costly incidents.</p>
-                            </div> {/* Corrected: Removed extra closing p tag here */}
+                            </div>
                         </div>
                         <p className="text-sm mt-6 text-gray-200">Our maintenance facilities are designed for specialized tooling and environmental controls, often requiring large bays (e.g., 20-foot tall ceilings for certain equipment).</p>
                     </div>
@@ -940,7 +942,7 @@ function App() {
                 <h2 className="text-3xl font-bold mb-6 text-[#333333]">Ready to Streamline Your AV Operations?</h2>
                 <p className="max-w-2xl mx-auto text-lg mb-8">Partner with AVIM for robust, scalable, and cost-effective ground AV infrastructure. Let's discuss a tailored solution for your fleet.</p>
                 <button onClick={() => {
-                    handleNavClick('home', 'contact'); // Direct navigation to contact section on home page
+                    handleNavClick('home', 'contact');
                 }} className="bg-[#FF7F00] text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-orange-600 transition-colors">Contact Us About Ground AV Solutions</button>
             </section>
         </>
@@ -951,7 +953,7 @@ function App() {
         <>
             {/* Hero Section */}
             <section id="hero" className="text-center my-12 md:my-20 py-16 rounded-3xl bg-gradient-to-br from-[#808080] to-[#A0A0A0] text-white shadow-xl">
-                <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">Elevating Urban Air Mobility with Vertiport Infrastructure</h1>
+                <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">Elevating Vertiport Infrastructure</h1>
                 <p className="text-xl md:text-2xl mt-4 font-semibold max-w-4xl mx-auto">AVIM is pioneering the development and management of advanced vertiports and heli-pads to power the coming era of air taxis.</p>
                 <button onClick={() => {
                     setTimeout(() => {
@@ -991,32 +993,32 @@ function App() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                        <div className="text-5xl mb-4 text-[#FF7F00]">📍</div>
+                        <MapPin className="process-card-icon" />
                         <h3 className="text-xl font-bold mb-2 text-[#333333]">1. Strategic Site Selection</h3>
                         <p className="text-gray-700 text-sm">We leverage data analytics and urban planning expertise to identify optimal locations for vertiports, considering air traffic routes, ground transportation connectivity, noise impact, and community integration. This includes rooftop sites, elevated structures, and repurposed ground facilities.</p>
                     </div>
                     <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                        <div className="text-5xl mb-4 text-[#FF7F00]">⚖️</div>
+                        <Scale className="process-card-icon" />
                         <h3 className="text-xl font-bold mb-2 text-[#333333]">2. Permitting & Regulatory Navigation</h3>
                         <p className="text-gray-700 text-sm">Navigating the complex landscape of FAA regulations, local zoning laws, environmental impact assessments, and building codes is our specialty. We manage the entire permitting process, ensuring full compliance and accelerating project timelines.</p>
                     </div>
                     <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                        <div className="text-5xl mb-4 text-[#FF7F00]">📐</div>
+                        <Layout className="process-card-icon" />
                         <h3 className="text-xl font-bold mb-2 text-[#333333]">3. Advanced Design & Engineering</h3>
                         <p className="text-gray-700 text-sm">Our designs integrate eVTOL landing pads, high-speed charging infrastructure, passenger lounges, baggage handling, and maintenance bays. We prioritize safety, efficiency, passenger experience, and scalability for future growth, adhering to all industry standards. Designs consider footprints from a few hundred square feet to tens of thousands for major hubs.</p>
                     </div>
                     <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                        <div className="text-5xl mb-4 text-[#FF7F00]">🏗️</div>
+                        <HardHat className="process-card-icon" />
                         <h3 className="text-xl font-bold mb-2 text-[#333333]">4. Construction & Deployment</h3>
                         <p className="text-gray-700 text-sm">AVIM oversees the full construction process, from groundbreaking to final inspection. We utilize modular construction techniques where feasible to reduce costs and accelerate deployment. Our focus is on robust, future-proof facilities built to aviation-grade standards.</p>
                     </div>
                     <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                        <div className="text-5xl mb-4 text-[#FF7F00]">📈</div>
+                        <Globe className="process-card-icon" />
                         <h3 className="text-xl font-bold mb-2 text-[#333333]">5. Operations & Maintenance</h3>
                         <p className="text-gray-700 text-sm">Post-construction, AVIM owns and operates the vertiports. This includes automated charging management, predictive maintenance for infrastructure and eVTOLs, air traffic integration, and passenger flow management, ensuring maximum uptime and profitability for air taxi operators.</p>
                     </div>
                     <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                        <div className="text-5xl mb-4 text-[#FF7F00]">🤝</div>
+                        <Handshake className="process-card-icon" />
                         <h3 className="text-xl font-bold mb-2 text-[#333333]">6. Partnership & Integration</h3>
                         <p className="text-gray-700 text-sm">We partner directly with leading eVTOL manufacturers and air taxi operators to provide a seamless "Vertiport-as-a-Service" model. This offloads CapEx and OpEx, allowing them to focus on flight technology and customer experience.</p>
                     </div>
@@ -1028,7 +1030,7 @@ function App() {
                 <h2 className="text-3xl font-bold mb-6 text-[#333333]">Ready for the Skies?</h2>
                 <p className="max-w-2xl mx-auto text-lg mb-8">Partner with AVIM to lay the groundwork for a seamless urban air mobility future. Let's discuss your vertiport project today.</p>
                 <button onClick={() => {
-                    handleNavClick('home', 'contact'); // Direct navigation to contact section on home page
+                    handleNavClick('home', 'contact');
                 }} className="bg-[#FF7F00] text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-orange-600 transition-colors">Contact Us About Air Mobility</button>
             </section>
         </>
