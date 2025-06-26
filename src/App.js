@@ -366,9 +366,9 @@ function App() {
                     <button onClick={() => {
                          handleNavClick('home', 'infographic-section');
                     }} className="bg-white rounded-2xl shadow-lg p-6 text-center kpi-card flex flex-col items-center justify-center">
-                        <div className="text-5xl mb-4 text-[#FF7F00]"><HardDrive /></div> {/* Changed icon to HardDrive */}
-                        <h3 className="text-xl font-bold mb-2 text-[#333333]">AV Data & Operations Hubs</h3> {/* Changed title */}
-                        <p className="text-gray-700">Providing physical hubs for secure data storage, high-volume charging, and integrated operational support.</p> {/* Changed description */}
+                        <div className="text-5xl mb-4 text-[#FF7F00]"><HardDrive /></div>
+                        <h3 className="text-xl font-bold mb-2 text-[#333333]">AV Data & Operations Hubs</h3>
+                        <p className="text-gray-700">Providing physical hubs for secure data storage, high-volume charging, and integrated operational support.</p>
                     </button>
                 </div>
             </section>
@@ -436,7 +436,7 @@ function App() {
                                 </div>
                                 <div className="text-4xl text-center my-4">↓</div>
                                 <div className="grid grid-cols-2 gap-4 text-sm">
-                                    <div className="bg-white/20 p-3 rounded">Mapping Vendor</div> {/* Changed back to Mapping Vendor */}
+                                    <div className="bg-white/20 p-3 rounded">Mapping Vendor</div>
                                     <div className="bg-white/20 p-3 rounded">Charging Network</div>
                                     <div className="bg-white/20 p-3 rounded">Maintenance Shop</div>
                                     <div className="bg-white/20 p-3 rounded">Software Provider</div>
@@ -820,7 +820,7 @@ function App() {
                             Email: <a href="mailto:info@avim.com" className="hover:underline">info@avim.com</a>
                         </p>
                         <p className="font-semibold">
-                            LinkedIn: <a href="https://www.linkedin.com/company/avim" target="_blank" rel="noopener noreferrer" className="hover:underline">AVIM on LinkedIn</a>
+                            LinkedIn: <a href="https://www.linkedin.com/company/aviminfra" target="_blank" rel="noopener noreferrer" className="hover:underline">AVIM on LinkedIn</a>
                         </p>
                         <p className="text-sm mt-4">
                             Location: San Antonio, TX, USA (Conceptual, if applicable)
