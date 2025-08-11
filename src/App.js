@@ -1,49 +1,67 @@
-</p>
+import React, { useState } from 'react';
+
+const App = () => {
+    const [currentPage, setCurrentPage] = useState('home');
+
+    // This function handles both navigating to a new page and scrolling to a specific section on that page.
+    const handleNavClick = (page, sectionId) => {
+        setCurrentPage(page);
+        if (sectionId) {
+            // Use a slight delay to allow the page to re-render before scrolling
+            setTimeout(() => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        }
+    };
+
+    const HomePage = () => (
+        <>
+            {/* Team section */}
+            <section id="team" className="py-16 bg-white rounded-xl shadow-lg my-8 mx-4">
+                <div className="container mx-auto px-4">
+                    <h3 className="text-2xl font-semibold mb-6 text-[#333333]">Meet Our Leadership</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {/* Teddy O'Brien's Profile */}
+                        <div className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center">
+                            <img
+                                src="/IMG_6843.JPG"
+                                alt="Teddy O'Brien"
+                                className="rounded-full w-24 h-24 object-cover mb-4 ring-2 ring-orange-300"
+                            />
+                            <h4 className="text-xl font-semibold text-[#333333]">Teddy O'Brien</h4>
+                            <p className="text-orange-600 text-sm mb-2">CEO & Co-founder</p>
+                            <p className="text-gray-600 text-center text-sm">
+                                Student at CU studying Real Estate and Finance, driving the vision for autonomous vehicle infrastructure.
+                            </p>
                         </div>
-                    </div>
-                    {/* Team section */}
-                    <div className="mt-12">
-                        <h3 className="text-2xl font-semibold mb-6 text-[#333333]">Meet Our Leadership</h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {/* Teddy O'Brien's Profile */}
-                            <div className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center">
-                                <img
-                                    src="/IMG_6843.JPG" // Direct reference to file in public folder
-                                    alt="Teddy O'Brien"
-                                    className="rounded-full w-24 h-24 object-cover mb-4 ring-2 ring-orange-300"
-                                />
-                                <h4 className="text-xl font-semibold text-[#333333]">Teddy O'Brien</h4>
-                                <p className="text-orange-600 text-sm mb-2">CEO & Co-founder</p>
-                                <p className="text-gray-600 text-center text-sm">
-                                    Student at CU studying Real Estate and Finance, driving the vision for autonomous vehicle infrastructure.
-                                </p>
-                            </div>
-                            {/* Default Founder Profile 1 */}
-                            <div className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center">
-                                <img
-                                    src="https://placehold.co/120x120/5e5e5e/ffffff?text=Co-Founder+1"
-                                    alt="Co-Founder Name"
-                                    className="rounded-full w-24 h-24 object-cover mb-4 ring-2 ring-orange-300"
-                                />
-                                <h4 className="text-xl font-semibold text-[#333333]">Jane Doe</h4>
-                                <p className="text-orange-600 text-sm mb-2">COO & Co-Founder</p>
-                                <p className="text-gray-600 text-center text-sm">
-                                    Visionary in urban tech and smart infrastructure. Previously led major projects at [Previous Company].
-                                </p>
-                            </div>
-                            {/* Default Founder Profile 2 */}
-                            <div className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center">
-                                <img
-                                    src="https://placehold.co/120x120/5e5e5e/ffffff?text=Co-Founder+2"
-                                    alt="Co-Founder Name"
-                                    className="rounded-full w-24 h-24 object-cover mb-4 ring-2 ring-orange-300"
-                                />
-                                <h4 className="text-xl font-semibold text-[#333333]">John Smith</h4>
-                                <p className="text-orange-600 text-sm mb-2">CTO & Co-Founder</p>
-                                <p className="text-gray-600 text-center text-sm">
-                                    AI and robotics expert with a background in complex autonomous systems development.
-                                </p>
-                            </div>
+                        {/* Default Founder Profile 1 */}
+                        <div className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center">
+                            <img
+                                src="https://placehold.co/120x120/5e5e5e/ffffff?text=Co-Founder+1"
+                                alt="Co-Founder Name"
+                                className="rounded-full w-24 h-24 object-cover mb-4 ring-2 ring-orange-300"
+                            />
+                            <h4 className="text-xl font-semibold text-[#333333]">Jane Doe</h4>
+                            <p className="text-orange-600 text-sm mb-2">COO & Co-Founder</p>
+                            <p className="text-gray-600 text-center text-sm">
+                                Visionary in urban tech and smart infrastructure. Previously led major projects at [Previous Company].
+                            </p>
+                        </div>
+                        {/* Default Founder Profile 2 */}
+                        <div className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center">
+                            <img
+                                src="https://placehold.co/120x120/5e5e5e/ffffff?text=Co-Founder+2"
+                                alt="Co-Founder Name"
+                                className="rounded-full w-24 h-24 object-cover mb-4 ring-2 ring-orange-300"
+                            />
+                            <h4 className="text-xl font-semibold text-[#333333]">John Smith</h4>
+                            <p className="text-orange-600 text-sm mb-2">CTO & Co-Founder</p>
+                            <p className="text-gray-600 text-center text-sm">
+                                AI and robotics expert with a background in complex autonomous systems development.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -59,7 +77,6 @@
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {/* Partner Type 1: AV & Electric Fleet Operators */}
                         <div className="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                            <Handshake className="h-10 w-10 text-orange-600 mx-auto mb-4" />
                             <h3 className="text-xl font-semibold mb-3 text-[#333333]">AV & Electric Fleet Operators</h3>
                             <p className="text-gray-600">
                                 Secure purpose-built depots for charging, maintenance, and dispatch, tailored to your operational needs and growth plans.
@@ -67,7 +84,6 @@
                         </div>
                         {/* Partner Type 2: Urban Planners & Real Estate Developers */}
                         <div className="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                            <Home className="h-10 w-10 text-orange-600 mx-auto mb-4" />
                             <h3 className="text-xl font-semibold mb-3 text-[#333333]">Urban Planners & Developers</h3>
                             <p className="text-gray-600">
                                 Integrate next-gen mobility infrastructure into smart city initiatives and large-scale urban development projects.
@@ -75,7 +91,6 @@
                         </div>
                         {/* Partner Type 3: Technology & Solution Providers */}
                         <div className="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                            <Lightbulb className="h-10 w-10 text-orange-600 mx-auto mb-4" />
                             <h3 className="text-xl font-semibold mb-3 text-[#333333]">Technology & Solution Providers</h3>
                             <p className="text-gray-600">
                                 Collaborate on integrating advanced charging, connectivity, and fleet management technologies into our physical hubs.
@@ -84,7 +99,7 @@
                     </div>
                     <div className="mt-12">
                         <button onClick={() => handleNavClick('home', 'contact')} className="bg-orange-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center mx-auto">
-                            Explore Partnership Opportunities <Handshake className="ml-2 h-5 w-5" />
+                            Explore Partnership Opportunities
                         </button>
                     </div>
                 </div>
@@ -106,7 +121,7 @@
                                 Lead site acquisition, zoning, and development for our initial AV/EV fleet depots in target urban markets.
                             </p>
                             <button onClick={() => handleNavClick('home', 'contact')} className="text-orange-600 hover:underline flex items-center">
-                                Apply Now <ArrowRight className="ml-1 h-4 w-4" />
+                                Apply Now
                             </button>
                         </div>
                         {/* Job Opening 2 */}
@@ -117,13 +132,13 @@
                                 Oversee the design, construction, and integration of charging, servicing, and connectivity infrastructure within AV/EV depots.
                             </p>
                             <button onClick={() => handleNavClick('home', 'contact')} className="text-orange-600 hover:underline flex items-center">
-                                Apply Now <ArrowRight className="ml-1 h-4 w-4" />
+                                Apply Now
                             </button>
                         </div>
                     </div>
                     <div className="mt-12">
                         <button onClick={() => handleNavClick('home', 'contact')} className="bg-orange-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center mx-auto">
-                            View All Careers <Briefcase className="ml-2 h-5 w-5" />
+                            View All Careers
                         </button>
                     </div>
                 </div>
@@ -152,7 +167,7 @@
                         </div>
                         <div>
                             <img
-                                src="/Vertiport photo.png" // Corrected to PNG extension
+                                src="/Vertiport photo.png"
                                 alt="Vertiport Infrastructure by AVIM"
                                 className="rounded-lg shadow-md mx-auto w-full h-auto object-cover"
                             />
@@ -160,7 +175,7 @@
                     </div>
                     <div className="mt-12">
                         <button onClick={() => handleNavClick('home', 'contact')} className="bg-[#FF7F00] text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center mx-auto">
-                            Request Investor Deck <DollarSign className="ml-2 h-5 w-5" />
+                            Request Investor Deck
                         </button>
                     </div>
                 </div>
@@ -187,7 +202,7 @@
                                 We're excited to announce the identification of our initial site in Denver, meeting key criteria for future AV/EV fleet operations...
                             </p>
                             <button onClick={() => handleNavClick('home', 'contact')} className="text-orange-600 hover:underline flex items-center">
-                                Read More <ArrowRight className="ml-1 h-4 w-4" />
+                                Read More
                             </button>
                         </div>
                         {/* News Article 2 */}
@@ -203,7 +218,7 @@
                                 Our latest insight piece explores the critical need for specialized charging infrastructure as electric fleets rapidly expand...
                             </p>
                             <button onClick={() => handleNavClick('home', 'contact')} className="text-orange-600 hover:underline flex items-center">
-                                Read More <ArrowRight className="ml-1 h-4 w-4" />
+                                Read More
                             </button>
                         </div>
                         {/* News Article 3 */}
@@ -219,13 +234,13 @@
                                 Members of the AVIM team shared insights on infrastructure development for autonomous logistics at the recent industry summit...
                             </p>
                             <button onClick={() => handleNavClick('home', 'contact')} className="text-orange-600 hover:underline flex items-center">
-                                Read More <ArrowRight className="ml-1 h-4 w-4" />
+                                Read More
                             </button>
                         </div>
                     </div>
                     <div className="mt-12">
                         <a href="#" className="inline-block text-orange-600 hover:underline font-semibold flex items-center justify-center">
-                            View All News & Insights <Newspaper className="ml-2 h-5 w-5" />
+                            View All News & Insights
                         </a>
                     </div>
                 </div>
@@ -298,18 +313,14 @@
             <section id="hero" className="text-center my-12 md:my-20 py-16 rounded-3xl bg-gradient-to-br from-[#FF7F00] to-[#FF9933] text-white shadow-xl">
                 <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">Optimizing Ground AV Operations</h1>
                 <p className="text-xl md:text-2xl mt-4 font-semibold max-w-4xl mx-auto">AVIM builds, owns, and operates state-of-the-art charging and maintenance facilities, enabling Waymo, Zoox, and other AV companies to scale their fleets cost-effectively.</p>
-                <button onClick={() => {
-                    setTimeout(() => {
-                        document.getElementById('our-facilities')?.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                }} className="mt-8 inline-block bg-white text-[#FF7F00] font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-gray-100 transition-colors">Explore Our Facilities</button>
+                <button onClick={() => handleNavClick('ground', 'our-facilities')} className="mt-8 inline-block bg-white text-[#FF7F00] font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-gray-100 transition-colors">Explore Our Facilities</button>
             </section>
 
             {/* The Problem We Solve Section */}
             <section id="problem-solve" className="my-16 text-center">
                 <h2 className="text-3xl font-bold mb-8 text-[#333333]">Addressing the High Costs of In-House Infrastructure</h2>
                 <p className="max-w-3xl mx-auto text-lg mb-12">Building and maintaining proprietary charging and maintenance infrastructure represents a significant capital and operational burden for autonomous vehicle companies. AVIM provides a solution to offload these non-core, yet critical, functions.</p>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="bg-white rounded-2xl shadow-lg p-6 kpi-card">
                         <div className="text-5xl mb-4 text-[#FF7F00]">💰</div>
@@ -334,10 +345,9 @@
                     <div className="bg-[#808080] text-white rounded-lg p-8 shadow-inner">
                         <h3 className="text-2xl font-bold mb-4 text-[#FF7F00]">Automated Charging Depots: Powering Your Fleet</h3>
                         <p className="text-lg mb-6">Our state-of-the-art charging depots are strategically located and engineered for high throughput, supporting rapid turnaround times for electric autonomous fleets.</p>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-[#333333]">
                             <div className="process-card p-6 bg-white rounded-lg shadow-md flex flex-col items-center">
-                                <Zap className="process-card-icon" />
                                 <h4 className="text-xl font-bold mb-2">Smart Charging Systems</h4>
                                 <p className="text-gray-700 text-sm">Integrating predictive maintenance tools to anticipate component failures before they occur, scheduling repairs to minimize downtime and prevent costly incidents.</p>
                             </div>
@@ -366,9 +376,7 @@
             <section id="contact" className="my-16 text-center">
                 <h2 className="text-3xl font-bold mb-6 text-[#333333]">Ready to Streamline Your AV Operations?</h2>
                 <p className="max-w-2xl mx-auto text-lg mb-8">Partner with AVIM for robust, scalable, and cost-effective ground AV infrastructure. Let's discuss a tailored solution for your fleet.</p>
-                <button onClick={() => {
-                    handleNavClick('home', 'contact');
-                }} className="bg-[#FF7F00] text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-orange-600 transition-colors">Contact Us About Ground AV Solutions</button>
+                <button onClick={() => handleNavClick('home', 'contact')} className="bg-[#FF7F00] text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-orange-600 transition-colors">Contact Us About Ground AV Solutions</button>
             </section>
         </>
     );
@@ -378,909 +386,36 @@
         <>
             {/* Hero Section */}
             <section id="hero" className="text-center my-12 md:my-20 py-16 rounded-3xl bg-gradient-to-br from-[#808080] to-[#A0A0A0] text-white shadow-xl">
-                <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">Elevating Vertiport Infrastructure</h1> {/* Simplified title */}
+                <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">Elevating Vertiport Infrastructure</h1>
                 <p className="text-xl md:text-2xl mt-4 font-semibold max-w-4xl mx-auto">AVIM is pioneering the development and management of advanced vertiports and heli-pads to power the coming era of air taxis.</p>
-                <button onClick={() => {
-                    setTimeout(() => {
-                        document.getElementById('our-approach')?.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                }} className="mt-8 inline-block bg-[#FF7F00] text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-orange-600 transition-colors">See Our Approach</button>
+                <button onClick={() => handleNavClick('air', 'our-approach')} className="mt-8 inline-block bg-[#FF7F00] text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-orange-600 transition-colors">See Our Approach</button>
             </section>
 
             {/* The Need Section */}
             <section id="the-need" className="my-16 text-center">
                 <h2 className="text-3xl font-bold mb-8 text-[#333333]">The Future of Flight Requires Groundbreaking Infrastructure</h2>
                 <p className="max-w-3xl mx-auto text-lg mb-12">As electric vertical takeoff and landing (eVTOL) aircraft, commonly known as air taxis, prepare for commercial launch, the critical need for purpose-built landing, charging, and maintenance infrastructure (vertiports) becomes paramount. Current helipads are insufficient for future urban air mobility operations.</p>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="bg-white rounded-2xl shadow-lg p-6 kpi-card">
                         <div className="text-5xl mb-4 text-[#FF7F00]">🏙️</div>
                         <h3 className="text-xl font-bold mb-2 text-[#333333]">Urban Integration</h3>
                         <p className="text-gray-700">Seamless integration of air taxis into cityscapes requires distributed, accessible vertiports.</p>
                     </div>
-                    <div className="bg-white rounded-2xl shadow-lg p-6 kpi-card">
-                        <div className="text-5xl mb-4 text-[#FF7F00]">🔌</div>
-                        <h3 className="text-xl font-bold mb-2 text-[#333333]">High-Speed Charging</h3>
-                        <p className="text-gray-700">eVTOLs demand rapid, high-power charging infrastructure for quick turnarounds.</p>
-                    </div>
-                    <div className="bg-white rounded-2xl shadow-lg p-6 kpi-card">
-                        <div className="text-5xl mb-4 text-[#FF7F00]">🛡️</div>
-                        <h3 className="text-xl font-bold mb-2 text-[#333333]">Safety & Regulation</h3>
-                        <p className="text-gray-700">Strict safety protocols and evolving regulations for air traffic and ground operations.</p>
-                    </div>
+                    {/* The rest of the content for this page was not provided. It would go here. */}
                 </div>
-            </section>
-
-            {/* Our Approach Section */}
-            <section id="our-approach" className="my-16 bg-[#333333] text-white rounded-2xl p-8 md:p-12 shadow-xl">
-                <h2 className="text-3xl font-bold text-center mb-10 text-[#FF7F00]">Our Approach to Vertiport Development & Ownership</h2>
-                <p className="max-w-3xl mx-auto text-center text-lg mb-12">AVIM provides end-to-end expertise in designing, building, owning, and operating advanced vertiports, empowering air taxi companies to focus on their flight operations.</p>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                        <MapPin className="process-card-icon" />
-                        <h3 className="text-xl font-bold mb-2 text-[#333333]">1. Strategic Site Selection</h3>
-                        <p className="text-gray-700 text-sm">We leverage data analytics and urban planning expertise to identify optimal locations for vertiports, considering air traffic routes, ground transportation connectivity, noise impact, and community integration. This includes rooftop sites, elevated structures, and repurposed ground facilities.</p>
-                    </div>
-                    <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                        <Scale className="process-card-icon" />
-                        <h3 className="text-xl font-bold mb-2 text-[#333333]">2. Permitting & Regulatory Navigation</h3>
-                        <p className="text-gray-700 text-sm">Navigating the complex landscape of FAA regulations, local zoning laws, environmental impact assessments, and building codes is our specialty. We manage the entire permitting process, ensuring full compliance and accelerating project timelines.</p>
-                    </div>
-                    <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                        <Layout className="process-card-icon" />
-                        <h3 className="text-xl font-bold mb-2 text-[#333333]">3. Advanced Design & Engineering</h3>
-                        <p className="text-gray-700 text-sm">Our designs integrate eVTOL landing pads, high-speed charging infrastructure, passenger lounges, baggage handling, and maintenance bays. We prioritize safety, efficiency, passenger experience, and scalability for future growth, adhering to all industry standards. Designs consider footprints from a few hundred square feet to tens of thousands for major hubs.</p>
-                    </div>
-                    <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                        <HardHat className="process-card-icon" />
-                        <h3 className="text-xl font-bold mb-2 text-[#333333]">4. Construction & Deployment</h3>
-                        <p className="text-gray-700 text-sm">AVIM oversees the full construction process, from groundbreaking to final inspection. We utilize modular construction techniques where feasible to reduce costs and accelerate deployment. Our focus is on robust, future-proof facilities built to aviation-grade standards.</p>
-                    </div>
-                    <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                        <Globe className="process-card-icon" />
-                        <h3 className="text-xl font-bold mb-2 text-[#333333]">5. Operations & Maintenance</h3>
-                        <p className="text-gray-700 text-sm">Post-construction, AVIM owns and operates the vertiports. This includes automated charging management, predictive maintenance for infrastructure and eVTOLs, air traffic integration, and passenger flow management, ensuring maximum uptime and profitability for air taxi operators.</p>
-                    </div>
-                    <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-                        <Handshake className="process-card-icon" />
-                        <h3 className="text-xl font-bold mb-2 text-[#333333]">6. Partnership & Integration</h3>
-                        <p className="text-gray-700 text-sm">We partner directly with leading eVTOL manufacturers and air taxi operators to provide a seamless "Vertiport-as-a-Service" model. This offloads CapEx and OpEx, allowing them to focus on flight technology and customer experience.</p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Call to Action / Contact Section */}
-            <section id="contact" className="my-16 text-center">
-                <h2 className="text-3xl font-bold mb-6 text-[#333333]">Ready for the Skies?</h2>
-                <p className="max-w-2xl mx-auto text-lg mb-8">Partner with AVIM to lay the groundwork for a seamless urban air mobility future. Let's discuss your vertiport project today.</p>
-                <button onClick={() => {
-                    handleNavClick('home', 'contact');
-                }} className="bg-[#FF7F00] text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-orange-600 transition-colors">Contact Us About Air Mobility</button>
             </section>
         </>
     );
-
-    // The Future Timeline Page Component
-    const FutureTimelinePage = () => (
-        <>
-            <style jsx>{`
-                .timeline-container {
-                    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-                    min-height: 100vh;
-                    margin: -2rem;
-                    padding: 2rem;
-                }
-                .timeline::before {
-                    content: '';
-                    position: absolute;
-                    left: 50%;
-                    top: 0;
-                    bottom: 0;
-                    width: 4px;
-                    background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.3) 100%);
-                    transform: translateX(-50%);
-                }
-                @media (max-width: 768px) {
-                    .timeline::before {
-                        left: 30px;
-                    }
-                }
-            `}</style>
-
-            <div className="timeline-container">
-                {/* Header */}
-                <div className="text-center text-white mb-16 animate-fade-in">
-                    <h1 className="text-4xl md:text-6xl font-black mb-6">The Autonomous Vehicle Revolution</h1>
-                    <p className="text-xl md:text-2xl opacity-95 max-w-4xl mx-auto">Building the infrastructure for tomorrow's self-driving world</p>
-                </div>
-
-                {/* Timeline */}
-                <div className="timeline relative max-w-6xl mx-auto pb-12">
-                    
-                    {/* Today */}
-                    <div className="relative mb-20 animate-fade-in">
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-[#FF7F00] to-[#FF9933] text-white font-bold px-6 py-3 rounded-full shadow-lg z-10 whitespace-nowrap">
-                            TODAY
-                        </div>
-                        <div className="bg-white rounded-2xl p-8 ml-auto w-full md:w-5/12 shadow-2xl hover:shadow-3xl transition-shadow cursor-pointer">
-                            <h3 className="text-2xl font-bold mb-4 text-[#FF7F00] flex items-center">
-                                <span className="text-3xl mr-3">🚗</span>
-                                The Beginning: Waymo's Rollout
-                            </h3>
-                            <p className="text-gray-700 mb-6">
-                                Autonomous vehicles are slowly being deployed in select cities. The foundation is being laid for a transportation revolution.
-                            </p>
-                            <ul className="space-y-3">
-                                {['Waymo operating in Phoenix, San Francisco, LA', 
-                                  'Limited service areas with safety drivers',
-                                  'Public getting comfortable with AV technology',
-                                  'Early adopters testing the waters'].map((item, i) => (
-                                    <li key={i} className="flex items-start">
-                                        <span className="text-[#FF7F00] font-bold text-xl mr-3">→</span>
-                                        <span className="text-gray-600">{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-
-                    {/* 1-2 Years - AVIM ENTERS */}
-                    <div className="relative mb-20 animate-fade-in" style={{animationDelay: '0.2s'}}>
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-[#FF7F00] to-[#FF9933] text-white font-bold px-6 py-3 rounded-full shadow-lg z-10 whitespace-nowrap">
-                            1-2 YEARS
-                        </div>
-                        <div className="bg-white rounded-2xl p-8 mr-auto w-full md:w-5/12 shadow-2xl hover:shadow-3xl transition-shadow cursor-pointer">
-                            <h3 className="text-2xl font-bold mb-4 text-[#FF7F00] flex items-center">
-                                <span className="text-3xl mr-3">🌆</span>
-                                Rapid Expansion
-                                <span className="ml-3 bg-gradient-to-r from-[#FF7F00] to-[#ff4517] text-white px-4 py-1 rounded-full text-sm font-bold animate-pulse">
-                                    AVIM ENTERS
-                                </span>
-                            </h3>
-                            <p className="text-gray-700 mb-6">
-                                AV services expand to most major US cities. Competition heats up as multiple players enter the market. <span className="bg-gradient-to-r from-[#FF7F00] to-[#FF9933] text-white px-2 py-1 rounded font-semibold">AVIM begins establishing its first charging hubs</span>.
-                            </p>
-                            <ul className="space-y-3">
-                                {['Waymo, Cruise, Zoox in 20+ cities',
-                                  'Tesla robotaxis joining the fleet',
-                                  'Price competition driving adoption',
-                                  'AVIM deploys initial infrastructure sites'].map((item, i) => (
-                                    <li key={i} className="flex items-start">
-                                        <span className="text-[#FF7F00] font-bold text-xl mr-3">→</span>
-                                        <span className="text-gray-600">{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-
-                    {/* 2-3 Years - AVIM DOMINATES */}
-                    <div className="relative mb-20 animate-fade-in" style={{animationDelay: '0.4s'}}>
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-[#FF7F00] to-[#FF9933] text-white font-bold px-6 py-3 rounded-full shadow-lg z-10 whitespace-nowrap">
-                            2-3 YEARS
-                        </div>
-                        <div className="bg-white rounded-2xl p-8 ml-auto w-full md:w-5/12 shadow-2xl hover:shadow-3xl transition-shadow cursor-pointer">
-                            <h3 className="text-2xl font-bold mb-4 text-[#FF7F00] flex items-center">
-                                <span className="text-3xl mr-3">⚡</span>
-                                The Charging Crisis
-                                <span className="ml-3 bg-gradient-to-r from-[#ff4517] to-[#FF7F00] text-white px-4 py-1 rounded-full text-sm font-bold animate-pulse">
-                                    AVIM DOMINATES
-                                </span>
-                            </h3>
-                            <p className="text-gray-700 mb-6">
-                                Thousands of AVs desperately need charging infrastructure. <span className="bg-gradient-to-r from-[#FF7F00] to-[#FF9933] text-white px-2 py-1 rounded font-semibold">AVIM becomes the dominant infrastructure provider</span>, with charging networks across major cities.
-                            </p>
-                            <ul className="space-y-3">
-                                {['AVIM charging hubs in 50+ locations nationwide',
-                                  'Strategic partnerships with major AV operators',
-                                  'Fast-charging technology optimized for fleet use',
-                                  '24/7 automated charging operations',
-                                  'Fleet management integration systems'].map((item, i) => (
-                                    <li key={i} className="flex items-start">
-                                        <span className="text-[#FF7F00] font-bold text-xl mr-3">→</span>
-                                        <span className="text-gray-600">{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-
-                    {/* 3-5 Years */}
-                    <div className="relative mb-20 animate-fade-in" style={{animationDelay: '0.6s'}}>
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-[#FF7F00] to-[#FF9933] text-white font-bold px-6 py-3 rounded-full shadow-lg z-10 whitespace-nowrap">
-                            3-5 YEARS
-                        </div>
-                        <div className="bg-white rounded-2xl p-8 mr-auto w-full md:w-5/12 shadow-2xl hover:shadow-3xl transition-shadow cursor-pointer">
-                            <h3 className="text-2xl font-bold mb-4 text-[#FF7F00] flex items-center">
-                                <span className="text-3xl mr-3">🏠</span>
-                                Personal AV Ownership Era
-                            </h3>
-                            <p className="text-gray-700 mb-6">
-                                Consumers begin owning personal AVs that can earn money while owners work. AVIM expands to serve both fleets and individuals.
-                            </p>
-                            <ul className="space-y-3">
-                                {['Cars dropping owners at work, then earning as taxis',
-                                  'Home wireless charging pads in garages',
-                                  'AVIM providing public charging for personal AVs',
-                                  'Subscription charging plans for individuals',
-                                  'Cars running errands autonomously'].map((item, i) => (
-                                    <li key={i} className="flex items-start">
-                                        <span className="text-[#FF7F00] font-bold text-xl mr-3">→</span>
-                                        <span className="text-gray-600">{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-
-                    {/* 5+ Years */}
-                    <div className="relative mb-20 animate-fade-in" style={{animationDelay: '0.8s'}}>
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-[#FF7F00] to-[#FF9933] text-white font-bold px-6 py-3 rounded-full shadow-lg z-10 whitespace-nowrap">
-                            5+ YEARS
-                        </div>
-                        <div className="bg-white rounded-2xl p-8 ml-auto w-full md:w-5/12 shadow-2xl hover:shadow-3xl transition-shadow cursor-pointer">
-                            <h3 className="text-2xl font-bold mb-4 text-[#FF7F00] flex items-center">
-                                <span className="text-3xl mr-3">🏪</span>
-                                Complete Infrastructure Transformation
-                            </h3>
-                            <p className="text-gray-700 mb-6">
-                                Every business adapts to AV world. AVIM becomes the backbone provider of all AV infrastructure needs.
-                            </p>
-                            <ul className="space-y-3">
-                                {['Dedicated AV lanes at stores and restaurants',
-                                  'Automated pickup/dropoff zones everywhere',
-                                  'AVIM managing charging, parking, and logistics',
-                                  'Smart city integration with traffic systems',
-                                  'Complete transformation of urban planning'].map((item, i) => (
-                                    <li key={i} className="flex items-start">
-                                        <span className="text-[#FF7F00] font-bold text-xl mr-3">→</span>
-                                        <span className="text-gray-600">{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                {/* CTA Section */}
-                <div className="text-center mt-20 p-12 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border-2 border-[#FF7F00] shadow-2xl animate-fade-in" style={{animationDelay: '1s'}}>
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#FF7F00]">Building Tomorrow's Infrastructure Today</h2>
-                    <p className="text-gray-300 text-lg mb-8 max-w-3xl mx-auto">
-                        AVIM is positioning itself at the center of the autonomous vehicle revolution, creating the essential charging and management infrastructure that will power the future of transportation.
-                    </p>
-                    <button 
-                        onClick={() => handleNavClick('home', 'contact')} 
-                        className="bg-gradient-to-r from-[#FF7F00] to-[#FF9933] text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
-                    >
-                        Join the Revolution
-                    </button>
-                </div>
-            </div>
-        </>
-    );
-
-    // Render the appropriate page based on current state
-    const renderPage = () => {
-        switch (currentPage) {
-            case 'groundSolutions':
-                return <GroundSolutionsPage />;
-            case 'airTaxiSolutions':
-                return <AirTaxiSolutionsPage />;
-            case 'futureTimeline':
-                return <FutureTimelinePage />;
-            case 'home':
-            default:
-                return <HomePage />;
-        }
-    };
 
     return (
-        <div className="bg-[#F8F8F8] text-[#333333] min-h-screen">
-            {/* Navigation Bar */}
-            <nav className="bg-[#FFFFFF] shadow-md py-4 sticky top-0 z-50">
-                <div className="container mx-auto flex justify-between items-center px-4 md:px-8">
-                    <button onClick={() => setCurrentPage('home')} className="text-2xl font-black text-[#FF7F00]">AVIM</button>
-                    <div className="space-x-4 md:space-x-6">
-                        <button onClick={() => handleNavClick('home', 'home')} className="text-[#333333] hover:text-[#FF7F00] font-semibold hidden md:inline-block">Home</button>
-                        <button onClick={() => handleNavClick('home', 'services')} className="text-[#333333] hover:text-[#FF7F00] font-semibold hidden md:inline-block">Services</button>
-                        <button onClick={() => setCurrentPage('groundSolutions')} className="text-[#333333] hover:text-[#FF7F00] font-semibold">Ground AV</button>
-                        <button onClick={() => setCurrentPage('airTaxiSolutions')} className="text-[#333333] hover:text-[#FF7F00] font-semibold">Air Taxi</button>
-                        <button onClick={() => handleNavClick('home', 'infographic-section')} className="text-[#333333] hover:text-[#FF7F00] font-semibold hidden md:inline-block">Our Vision</button>
-                        <button onClick={() => setCurrentPage('futureTimeline')} className="text-[#333333] hover:text-[#FF7F00] font-semibold">The Future</button>
-                        <button onClick={() => handleNavClick('home', 'contact')} className="bg-[#FF7F00] text-white px-4 py-2 rounded-full font-semibold hover:bg-orange-600 transition-colors">Contact Us</button>
-                    </div>
-                </div>
-            </nav>
-
-            <div className="container mx-auto p-4 md:p-8">
-                {renderPage()}
-            </div>
-
-            {/* Footer */}
-            <footer className="bg-[#333333] text-white text-center py-8 mt-16">
-                <p>&copy; 2025 AVIM. All rights reserved.</p>
-                <div className="mt-4 space-x-4">
-                    <a href="#" className="text-white hover:text-[#FF7F00]">Privacy Policy</a>
-                    <a href="#" className="text-white hover:text-[#FF7F00]">Terms of Service</a>
-                </div>
-            </footer>
+        <div className="App">
+            {/* Navigation (You will need to create a navigation menu here) */}
+            {currentPage === 'home' && <HomePage />}
+            {currentPage === 'ground' && <GroundSolutionsPage />}
+            {currentPage === 'air' && <AirTaxiSolutionsPage />}
         </div>
     );
-}
+};
 
-export default App;text-sm">We deploy high-power DC fast chargers and intelligent energy management systems to optimize charging schedules, minimize costs, and maximize fleet availability.</p>
-                            </div>
-                            <div className="process-card p-6 bg-white rounded-lg shadow-md flex flex-col items-center">
-                                <Users className="process-card-icon" /> {/* Using Users as a generic 'automation' icon */}
-                                <h4 className="text-xl font-bold mb-2">Automated Vehicle Handling</h4>
-                                <p className="text-gray-700 text-sm">Developing robotics and automated systems for vehicle movement within depots, reducing human intervention for parking, charging connection, and queuing.</p>
-                            </div>
-                            <div className="process-card p-6 bg-white rounded-lg shadow-md flex flex-col items-center">
-                                <CheckCircle className="process-card-icon" /> {/* Using CheckCircle for 'cleaning' */}
-                                <h4 className="text-xl font-bold mb-2">Integrated Cleaning & Staging</h4>
-                                <p className="text-gray-700 text-sm">Automated interior and exterior cleaning bays are seamlessly integrated into the depot flow, ensuring vehicles are clean and ready for immediate redeployment.</p>
-                            </div>
-                        </div>
-                        <p className="text-sm mt-6 text-gray-200">Our facilities are built to support fleets of hundreds of vehicles, with flexible configurations for expansion, typically spanning multiple acres (e.g., 200,000 to 500,000 square feet for a major hub).</p>
-                    </div>
-
-                    {/* Maintenance & Support Facilities */}
-                    <div className="bg-[#808080] text-white rounded-lg p-8 shadow-inner">
-                        <h3 className="text-2xl font-bold mb-4 text-[#FF7F00]">Specialized AV Maintenance: Ensuring Peak Performance</h3>
-                        <p className="text-lg mb-6">Our maintenance centers are equipped with cutting-edge technology and staffed by expert technicians to handle the unique demands of autonomous vehicle upkeep.</p>
-                        
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-[#333333]">
-                            <div className="process-card p-6 bg-white rounded-lg shadow-md flex flex-col items-center">
-                                <Info className="process-card-icon" /> {/* Using Info for diagnostics */}
-                                <h4 className="text-xl font-bold mb-2">AI-Driven Diagnostics</h4>
-                                <p className="text-gray-700 text-sm">Utilizing AI-powered cameras and sensor data analysis for automated, rapid, and precise detection of vehicle issues, from tire wear to sensor anomalies.</p>
-                            </div>
-                            <div className="process-card p-6 bg-white rounded-lg shadow-md flex flex-col items-center">
-                                <Wrench className="process-card-icon" /> {/* Using Wrench for calibration */}
-                                <h4 className="text-xl font-bold mb-2">Precision Sensor Calibration</h4>
-                                <p className="text-gray-700 text-sm">Advanced calibration labs ensure LiDAR, camera, and radar sensors maintain centimeter-level accuracy, crucial for AV safety and performance. We recommend annual recalibration for critical sensors.</p>
-                            </div>
-                            <div className="process-card p-6 bg-white rounded-lg shadow-md flex flex-col items-center">
-                                <Package className="process-card-icon" /> {/* Using Package for proactive/predictive repair */}
-                                <h4 className="text-xl font-bold mb-2">Proactive & Predictive Repair</h4>
-                                <p className="text-gray-700 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-    ArcElement,
-    BarElement,
-    LineController, // Import LineController
-    DoughnutController, // Import DoughnutController
-    BarController // Import BarController
-} from 'chart.js';
-import {
-    ArrowRight, Users, Handshake, DollarSign, Briefcase, Mail, Home, Lightbulb, Info, Newspaper,
-    MapPin, CloudLightning, Wrench, Building, Rocket, Zap, HardHat, Scale, Layout, Globe, Package, CheckCircle,
-    HardDrive // New icon for data storage
-} from 'lucide-react'; // Import directly from lucide-react npm package
-
-// Register Chart.js components
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-    ArcElement,
-    BarElement,
-    LineController, // Register LineController
-    DoughnutController, // Register DoughnutController
-    BarController // Register BarController
-);
-
-function App() {
-    // State to manage which page is currently displayed
-    const [currentPage, setCurrentPage] = useState('home');
-
-    // Define AVIM brand colors for consistent use
-    const colors = {
-        primaryAccent: '#FF7F00', // Vibrant Orange
-        secondaryAccent: '#808080', // Medium Grey
-        darkText: '#333333',     // Dark Grey
-        lightBg: '#F8F8F8',      // Off-White/Light Grey
-        white: '#FFFFFF',        // White
-    };
-
-    // Ref for chart canvases
-    const avMarketChartRef = useRef(null);
-    const robotaxiMarketChartRef = useRef(null);
-    const annualCostChartRef = useRef(null);
-    const initialInvestmentChartRef = useRef(null);
-
-    // Function to process labels for Chart.js to handle long strings by wrapping
-    const processLabels = useCallback((labels) => {
-        const maxLength = 16;
-        return labels.map(label => {
-            if (typeof label !== 'string' || label.length <= maxLength) {
-                return label;
-            }
-            const words = label.split(' ');
-            const lines = [];
-            let currentLine = '';
-            for (const word of words) {
-                if ((currentLine + ' ' + word).trim().length > maxLength) {
-                    lines.push(currentLine.trim());
-                    currentLine = word;
-                } else {
-                    currentLine = (currentLine + ' ' + word).trim();
-                }
-            }
-            if (currentLine) {
-                lines.push(currentLine.trim());
-            }
-            return lines;
-        });
-    }, []);
-
-    // Common Chart.js options for consistent styling and tooltip behavior
-    const commonChartOptions = useCallback(() => ({
-        responsive: true,
-        maintainAspectRatio: false, // Important for charts to respect container size
-        plugins: {
-            legend: {
-                labels: {
-                    color: colors.darkText,
-                    font: {
-                        family: "'Inter', sans-serif",
-                    }
-                }
-            },
-            tooltip: {
-                callbacks: {
-                    title: function(tooltipItems) {
-                        const item = tooltipItems[0];
-                        let label = item.chart.data.labels[item.dataIndex];
-                        if (Array.isArray(label)) {
-                            return label.join(' '); // Join array labels for tooltip title
-                        }
-                        return label;
-                    },
-                    label: function(context) {
-                        let label = context.dataset.label || '';
-                        if (label) {
-                            label += ': ';
-                        }
-                        if (context.parsed !== null) {
-                            // Format currency for dollar values
-                            label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }).format(context.parsed);
-                        }
-                        return label;
-                    }
-                },
-                backgroundColor: 'rgba(51, 51, 51, 0.9)', // Dark grey for tooltip background
-                titleFont: {
-                    family: "'Inter', sans-serif",
-                    size: 14,
-                    weight: 'bold'
-                },
-                bodyFont: {
-                    family: "'Inter', sans-serif",
-                }
-            }
-        },
-        scales: {
-            y: {
-                ticks: {
-                    color: colors.darkText,
-                    font: {
-                        family: "'Inter', sans-serif",
-                    }
-                },
-                grid: {
-                    color: 'rgba(128, 128, 128, 0.1)' // Light grey for grid lines
-                }
-            },
-            x: {
-                ticks: {
-                    color: colors.darkText,
-                    font: {
-                        family: "'Inter', sans-serif",
-                    }
-                },
-                grid: {
-                    display: false // Hide X-axis grid lines
-                }
-            }
-        }
-    }), [colors]);
-
-    // Initialize Chart.js charts
-    useEffect(() => {
-        // Only render charts if on the home page (where infographic is embedded)
-        if (currentPage === 'home') {
-            // Chart data and configuration
-            const avMarketData = {
-                labels: ['2024', '2034'],
-                datasets: [{
-                    label: 'AV Market Value (in Trillions USD)',
-                    data: [1.7, 3.9],
-                    borderColor: colors.primaryAccent,
-                    backgroundColor: `rgba(255, 127, 0, 0.2)`, // Orange with transparency
-                    fill: true,
-                    tension: 0.4,
-                    pointRadius: 5,
-                    pointBackgroundColor: colors.primaryAccent
-                }]
-            };
-
-            const robotaxiMarketData = {
-                labels: ['2022', '2031'],
-                datasets: [{
-                    label: 'Robotaxi Market Value (in Billions USD)',
-                    data: [1.71, 118.61],
-                    borderColor: colors.secondaryAccent,
-                    backgroundColor: `rgba(128, 128, 128, 0.3)`, // Grey with transparency
-                    fill: true,
-                    tension: 0.1,
-                    pointRadius: 5,
-                    pointBackgroundColor: colors.secondaryAccent
-                }]
-            };
-
-            const annualCostData = {
-                labels: ['Vehicle Amortization', 'Operational Support', 'Maintenance', 'Insurance', 'Charging/Depot', 'Cleaning', 'Other'],
-                datasets: [{
-                    label: 'Annual Cost Breakdown',
-                    data: [22000, 10000, 9000, 7000, 5500, 5000, 3000],
-                    backgroundColor: [
-                        colors.primaryAccent,
-                        colors.secondaryAccent,
-                        '#FF9933', // Lighter orange
-                        '#A0A0A0', // Lighter grey
-                        '#CC6600', // Darker orange
-                        '#666666', // Darker grey
-                        '#FFBF80'  // Pale orange
-                    ],
-                    borderColor: colors.white,
-                    borderWidth: 3,
-                    hoverOffset: 10
-                }]
-            };
-
-            const investmentLabels = ['Software Dev & Testing', 'Hardware Integration', 'Autonomous Logistics Hub'];
-            const processedInvestmentLabels = processLabels(investmentLabels);
-            const initialInvestmentData = {
-                labels: processedInvestmentLabels,
-                datasets: [{
-                    label: 'Low Est. (in Millions USD)',
-                    data: [2, 0.5, 16.3],
-                    backgroundColor: `rgba(128, 128, 128, 0.7)`, // Grey
-                    borderColor: colors.secondaryAccent,
-                    borderWidth: 2
-                }, {
-                    label: 'High Est. (in Millions USD)',
-                    data: [8, 2, 16.3],
-                    backgroundColor: `rgba(255, 127, 0, 0.7)`, // Orange
-                    borderColor: colors.primaryAccent,
-                    borderWidth: 2
-                }]
-            };
-
-            // Initialize charts using refs and ensure previous instances are destroyed
-            // Store chart instances on the ref object itself for proper cleanup
-            if (avMarketChartRef.current && avMarketChartRef.current.chartInstance) {
-                avMarketChartRef.current.chartInstance.destroy();
-            }
-            const avMarketChartCtx = avMarketChartRef.current?.getContext('2d');
-            let avMarketChartInstance;
-            if (avMarketChartCtx) {
-                avMarketChartInstance = new ChartJS(avMarketChartCtx, {
-                    type: 'line',
-                    data: avMarketData,
-                    options: commonChartOptions(),
-                });
-                avMarketChartRef.current.chartInstance = avMarketChartInstance; // Store instance
-            }
-
-            if (robotaxiMarketChartRef.current && robotaxiMarketChartRef.current.chartInstance) {
-                robotaxiMarketChartRef.current.chartInstance.destroy();
-            }
-            const robotaxiMarketChartCtx = robotaxiMarketChartRef.current?.getContext('2d');
-            let robotaxiMarketChartInstance;
-            if (robotaxiMarketChartCtx) {
-                robotaxiMarketChartInstance = new ChartJS(robotaxiMarketChartCtx, {
-                    type: 'line',
-                    data: robotaxiMarketData,
-                    options: commonChartOptions(),
-                });
-                robotaxiMarketChartRef.current.chartInstance = robotaxiMarketChartInstance;
-            }
-
-            if (annualCostChartRef.current && annualCostChartRef.current.chartInstance) {
-                annualCostChartRef.current.chartInstance.destroy();
-            }
-            const annualCostChartCtx = annualCostChartRef.current?.getContext('2d');
-            let annualCostChartInstance;
-            if (annualCostChartCtx) {
-                annualCostChartInstance = new ChartJS(annualCostChartCtx, {
-                    type: 'doughnut',
-                    data: annualCostData,
-                    options: {
-                        ...commonChartOptions(),
-                        plugins: {
-                            ...commonChartOptions().plugins, // Merge common plugins
-                            legend: {
-                                position: 'bottom',
-                                labels: {
-                                    color: colors.darkText,
-                                    padding: 15,
-                                    font: { family: "'Inter', sans-serif" }
-                                }
-                            },
-                        },
-                    },
-                });
-                annualCostChartRef.current.chartInstance = annualCostChartInstance;
-            }
-
-            if (initialInvestmentChartRef.current && initialInvestmentChartRef.current.chartInstance) {
-                initialInvestmentChartRef.current.chartInstance.destroy();
-            }
-            const initialInvestmentChartCtx = initialInvestmentChartRef.current?.getContext('2d');
-            let initialInvestmentChartInstance;
-            if (initialInvestmentChartCtx) {
-                initialInvestmentChartInstance = new ChartJS(initialInvestmentChartCtx, {
-                    type: 'bar',
-                    data: initialInvestmentData,
-                    options: {
-                        indexAxis: 'y', // Horizontal bar chart
-                        ...commonChartOptions(),
-                        scales: {
-                            x: {
-                                ticks: {
-                                    callback: function(value) { return '$' + value + 'M' }, // Format X-axis labels
-                                    color: colors.darkText,
-                                    font: { family: "'Inter', sans-serif" }
-                                },
-                                grid: { color: `rgba(128, 128, 128, 0.1)` } // Light grey grid lines
-                            },
-                            y: {
-                                ticks: { color: colors.darkText, font: { family: "'Inter', sans-serif" } },
-                                grid: { display: false }
-                            }
-                        }
-                    }
-                });
-                initialInvestmentChartRef.current.chartInstance = initialInvestmentChartInstance;
-            }
-
-            // Cleanup function to destroy chart instances on component unmount or page change
-            return () => {
-                if (avMarketChartInstance) avMarketChartInstance.destroy();
-                if (robotaxiMarketChartInstance) robotaxiMarketChartInstance.destroy();
-                if (annualCostChartInstance) annualCostChartInstance.destroy();
-                if (initialInvestmentChartInstance) initialInvestmentChartInstance.destroy();
-            };
-        }
-    }, [currentPage, commonChartOptions, processLabels, colors]); // Re-run effect if current page or colors change
-
-    // Utility function for smooth scrolling to sections
-    const scrollToSection = (id) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
-    // Navigation click handler
-    const handleNavClick = (section, id) => {
-        setCurrentPage(section);
-        // Use setTimeout to allow state update to render, then scroll
-        setTimeout(() => scrollToSection(id), 0);
-    };
-
-    // Main page content, including embedded infographic sections
-    const HomePage = () => (
-        <>
-            {/* Hero Section */}
-            <section id="home" className="text-center my-12 md:my-20 py-12 rounded-3xl bg-gradient-to-br from-[#FF7F00] to-[#FF9933] text-white shadow-xl">
-                <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">Empowering the Future of Autonomous Mobility</h1>
-                <p className="text-xl md:text-2xl mt-4 font-semibold max-w-4xl mx-auto">AVIM provides the essential infrastructure solutions that enable autonomous vehicle companies to scale efficiently and focus on their core technology.</p>
-                <button onClick={() => {
-                    handleNavClick('home', 'services'); // Changed from direct setCurrentPage to handleNavClick
-                }} className="mt-8 inline-block bg-white text-[#FF7F00] font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-gray-100 transition-colors">Discover Our Solutions</button>
-            </section>
-
-            {/* Services Section */}
-            <section id="services" className="my-16">
-                <h2 className="text-3xl font-bold text-center mb-10 text-[#333333]">Our Core Infrastructure Services</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <button onClick={() => setCurrentPage('groundSolutions')} className="bg-white rounded-2xl shadow-lg p-6 text-center kpi-card flex flex-col items-center justify-center">
-                        <div className="text-5xl mb-4 text-[#FF7F00]">🚗</div>
-                        <h3 className="text-xl font-bold mb-2 text-[#333333]">Ground AV Solutions</h3>
-                        <p className="text-gray-700">Comprehensive infrastructure for autonomous ground vehicles.</p>
-                    </button>
-                    <button onClick={() => setCurrentPage('airTaxiSolutions')} className="bg-white rounded-2xl shadow-lg p-6 text-center kpi-card flex flex-col items-center justify-center">
-                        <div className="text-5xl mb-4 text-[#FF7F00]">✈️</div>
-                        <h3 className="text-xl font-bold mb-2 text-[#333333]">Air Taxi Solutions</h3>
-                        <p className="text-gray-700">Pioneering vertiport development for urban air mobility.</p>
-                    </button>
-                    <button onClick={() => {
-                         handleNavClick('home', 'infographic-section');
-                    }} className="bg-white rounded-2xl shadow-lg p-6 text-center kpi-card flex flex-col items-center justify-center">
-                        <div className="text-5xl mb-4 text-[#FF7F00]"><HardDrive /></div>
-                        <h3 className="text-xl font-bold mb-2 text-[#333333]">AV Data & Operations Hubs</h3>
-                        <p className="text-gray-700">Providing physical hubs for secure data storage, high-volume charging, and integrated operational support.</p>
-                    </button>
-                </div>
-            </section>
-
-            {/* Embedded Infographic Section */}
-            <section id="infographic-section" className="my-16">
-                <header className="text-center my-8 md:my-16">
-                    <h1 className="text-4xl md:text-6xl font-black text-[#FF7F00] tracking-tight">Our Vision: The Road Ahead</h1>
-                    <p className="text-xl md:text-2xl mt-4 font-semibold text-[#333333]">Understanding the Compelling Case for AV Infrastructure-as-a-Service</p>
-                    <p className="max-w-3xl mx-auto mt-4 text-lg">Dive deep into the data supporting the crucial need for outsourced, specialized infrastructure for autonomous vehicle companies.</p>
-                </header>
-
-                <section id="market-growth" className="my-12">
-                    <h2 className="text-3xl font-bold text-center mb-8">An Unprecedented Growth Trajectory</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        <div className="bg-white rounded-2xl shadow-lg p-6 kpi-card">
-                            <h3 className="text-xl font-bold mb-4 text-[#808080]">Total AV Market Projection</h3>
-                            <p className="mb-4">The global autonomous vehicle market is on a path of explosive growth, creating immense pressure on operators to scale their fleets and supporting infrastructure rapidly.</p>
-                            <div className="chart-container">
-                                <canvas ref={avMarketChartRef}></canvas>
-                            </div>
-                        </div>
-                        <div className="bg-white rounded-2xl shadow-lg p-6 kpi-card">
-                            <h3 className="text-xl font-bold mb-4 text-[#808080]">The Robotaxi Revolution</h3>
-                             <p className="mb-4">The robotaxi segment is forecast to be the epicenter of AV expansion, with staggering growth that fundamentally requires centralized, high-throughput service depots.</p>
-                            <div className="chart-container">
-                                <canvas ref={robotaxiMarketChartRef}></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="financial-burden" className="my-16">
-                    <h2 className="text-3xl font-bold text-center mb-2">The High Cost of Going It Alone</h2>
-                    <p className="text-lg text-center max-w-3xl mx-auto mb-8">AV companies face immense capital and operational expenditures, tying up resources that could be focused on core technology development.</p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="bg-white rounded-2xl shadow-lg p-6 kpi-card flex flex-col">
-                            <h3 className="text-xl font-bold mb-2 text-[#FF7F00]">The ~$61,500 Annual Burden Per Vehicle</h3>
-                            <p className="mb-4 flex-grow">Operational costs, from maintenance to insurance and cleaning, create a significant and recurring financial drain on every single vehicle in a fleet.</p>
-                            <div className="chart-container">
-                                <canvas ref={annualCostChartRef}></canvas>
-                            </div>
-                        </div>
-                        <div className="bg-white rounded-2xl shadow-lg p-6 kpi-card flex flex-col">
-                            <h3 className="text-xl font-bold mb-2 text-[#FF7F00]">The Multi-Million Dollar Buy-In</h3>
-                             <p className="mb-4 flex-grow">Before a single AV hits the road, companies must invest millions in non-core activities like software testing, hardware integration, and facility construction.</p>
-                             <div className="chart-container">
-                                <canvas ref={initialInvestmentChartRef}></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="iaas-model" className="my-16 bg-[#333333] text-white rounded-2xl p-8 md:p-12 shadow-2xl">
-                    <h2 className="text-3xl font-bold text-center mb-2 text-[#FF7F00]">The Strategic Shift: Infrastructure-as-a-Service</h2>
-                    <p className="text-lg text-center max-w-3xl mx-auto mb-8">By outsourcing infrastructure, AV operators can convert heavy capital expenditures into predictable operational costs, enabling faster scaling and a sharper focus on core innovation.</p>
-                    
-                    <div className="flex flex-col md:flex-row justify-around items-center gap-8 mt-12">
-                        <div className="w-full md:w-2/5 text-center">
-                            <h4 className="text-2xl font-bold mb-4">The Current Fragmented Model</h4>
-                             <div className="bg-white/10 rounded-lg p-6">
-                                <div className="flex items-center justify-center mb-4">
-                                    <div className="p-4 bg-[#FF7F00] rounded-full text-2xl">🚗</div>
-                                     <div className="font-bold text-lg ml-3">AV Operator</div>
-                                </div>
-                                <div className="text-4xl text-center my-4">↓</div>
-                                <div className="grid grid-cols-2 gap-4 text-sm">
-                                    <div className="bg-white/20 p-3 rounded">Mapping Vendor</div>
-                                    <div className="bg-white/20 p-3 rounded">Charging Network</div>
-                                    <div className="bg-white/20 p-3 rounded">Maintenance Shop</div>
-                                    <div className="bg-white/20 p-3 rounded">Software Provider</div>
-                                     <div className="bg-white/20 p-3 rounded">Calibration Service</div>
-                                    <div className="bg-white/20 p-3 rounded">Data Annotator</div>
-                                </div>
-                                 <p className="mt-4 text-sm text-gray-300">Complex, costly, and inefficient multi-vendor management.</p>
-                            </div>
-                        </div>
-
-                        <div className="text-4xl font-black text-[#FF7F00] hidden md:block">→</div>
-
-                        <div className="w-full md:w-2/5 text-center">
-                            <h4 className="text-2xl font-bold mb-4">The Integrated IaaS Model</h4>
-                            <div className="bg-[#808080] text-[#FFFFFF] rounded-lg p-6">
-                                 <div className="flex items-center justify-center mb-4">
-                                    <div className="p-4 bg-white/50 rounded-full text-2xl">🚗</div>
-                                    <div className="font-bold text-lg ml-3">AV Operator</div>
-                                </div>
-                                <div className="text-4xl text-center my-4">↓</div>
-                                <div className="bg-white/80 p-6 rounded-lg text-[#333333]">
-                                    <div className="font-extrabold text-lg">Integrated Infrastructure Partner</div>
-                                     <p className="mt-2 text-sm">One partner for data, charging, maintenance, and operations.</p>
-                                </div>
-                                 <p className="mt-4 text-sm text-gray-200">Simple, scalable, and cost-effective single-point solution.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="service-breakdown" className="my-16">
-                    <h2 className="text-3xl font-bold text-center mb-8">The Three Pillars of AV Infrastructure</h2>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                        
-                        <div className="bg-white rounded-2xl shadow-lg p-6 kpi-card">
-                            <div className="text-4xl mb-4"><HardDrive /></div>
-                            <h3 className="text-xl font-bold mb-2 text-[#808080]">AV Data Management & Storage</h3>
-                            <p className="text-sm mb-4">Autonomous vehicles generate petabytes of data daily. We provide on-site, secure data storage and management solutions, enabling AV companies to offload massive data burdens and focus on critical data analysis.</p>
-                            <div className="bg-gray-100 p-4 rounded-lg">
-                                <p className="font-bold">Key Challenge:</p>
-                                <p className="text-sm">AVs generate <span className="font-black text-[#FF7F00]">petabytes of data daily</span>, requiring robust and secure on-site storage and processing infrastructure.</p>
-                            </div>
-                        </div>
-                        
-                        <div className="bg-white rounded-2xl shadow-lg p-6 kpi-card">
-                            <div className="text-4xl mb-4">⚡</div>
-                            <h3 className="text-xl font-bold mb-2 text-[#808080]">Automated Charging & Depots</h3>
-                            <p className="text-sm mb-4">With fleets being overwhelmingly electric, a core need is full-service charging depots. This goes beyond plugs; it includes site selection, permitting, automated vehicle handling, cleaning, and smart energy management to maximize fleet uptime.</p>
-                             <div className="bg-gray-100 p-4 rounded-lg">
-                                <p className="font-bold">Key Insight:</p>
-                                <p className="text-sm">Local operations, including charging, account for <span className="font-black text-[#FF7F00]">~50%</span> of total shared AV mobility costs.</p>
-                            </div>
-                        </div>
-
-                        <div className="bg-white rounded-2xl shadow-lg p-6 kpi-card">
-                            <div className="text-4xl mb-4">🔧</div> {/* Icon is now orange */}
-                            <h3 className="text-xl font-bold mb-2 text-[#333333]">Specialized Maintenance</h3> {/* Heading is now dark grey */}
-                            <p className="text-sm mb-4">AV maintenance is highly complex, requiring AI-driven predictive diagnostics and precise calibration of sensitive sensors like LiDAR and cameras. A specialized service can provide this expertise more efficiently than in-house teams.</p>
-                            <div className="bg-gray-100 p-4 rounded-lg">
-                                <p className="font-bold">Key Requirement:</p>
-                                <p className="text-sm">Sensors like accelerometers require <span className="font-black text-[#808080]">annual recalibration</span> to ensure safety and accuracy.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </section>
-
-                <section id="conclusion" className="my-12 text-center">
-                     <h2 className="text-3xl font-bold text-center mb-4">A Clear and Compelling Market Need</h2>
-                     <p className="max-w-4xl mx-auto text-lg mb-8">The path to profitability for AV companies is paved with efficiency. The immense costs and operational complexity of building proprietary infrastructure create an undeniable opportunity for a third-party provider. By offering an integrated, scalable, and reliable service, an IaaS partner becomes a critical enabler, allowing AV innovators to focus on what they do best: revolutionizing mobility.</p>
-                     <div className="flex justify-center">
-                        <button onClick={() => {
-                            handleNavClick('home', 'contact');
-                        }} className="bg-[#FF7F00] text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-orange-600 transition-colors">Partner With The Future</button>
-                    </div>
-                </section>
-            </section>
-
-            {/* About Us Section */}
-            <section id="about" className="py-16 bg-white rounded-xl shadow-lg my-8 mx-4">
-                <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#333333]">About AVIM</h2>
-                    <p className="text-lg text-gray-700 max-w-4xl mx-auto mb-12">
-                        AVIM is an infrastructure development company focused on the critical needs of emerging autonomous vehicle (AV) and electric fleet industries. As these technologies scale, they require specialized physical real estate tailored to operations like charging, storage, servicing, and dispatching. AVIM is working to provide that essential infrastructure, starting in key urban markets.
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <img
-                                src="/CIty backround 2.avif"
-                                alt="AVIM's Vision for Autonomous Infrastructure"
-                                className="rounded-lg shadow-md mx-auto mb-6 md:mb-0 w-full h-auto object-cover"
-                            />
-                        </div>
-                        <div className="text-left">
-                            <h3 className="text-2xl font-semibold mb-4 text-[#333333]">Our Mission</h3>
-                            <p className="text-gray-700 mb-4">
-                                To accelerate the safe and efficient integration of autonomous and electric fleets by developing and managing purpose-built physical infrastructure that meets their unique operational demands.
-                            </p>
-                            <h3 className="text-2xl font-semibold mb-4 text-[#333333]">Why It Matters</h3>
-                            <p className="text-gray-700">
-                                As autonomous and electric vehicle adoption grows, cities and companies urgently need new types of infrastructure. AVIM positions itself as the behind-the-scenes engine—quietly building the depots, charging yards, and servicing facilities that power the future of transportation.
+export default App;
