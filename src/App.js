@@ -854,3 +854,324 @@ function App() {
       </section>
     </>
   );
+
+  // AIR TAXI (VERTIPORT) PAGE
+  const AirTaxiSolutionsPage = () => (
+    <>
+      {/* Hero */}
+      <section id="hero" className="text-center my-12 md:my-20 py-16 rounded-3xl bg-gradient-to-br from-[#808080] to-[#A0A0A0] text-white shadow-xl">
+        <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">Elevating Vertiport Infrastructure</h1>
+        <p className="text-xl md:text-2xl mt-4 font-semibold max-w-4xl mx-auto">
+          AVIM is pioneering the development and management of advanced vertiports and heli-pads to power the coming era of air taxis.
+        </p>
+        <button
+          onClick={() => { setTimeout(() => { document.getElementById('our-approach')?.scrollIntoView({ behavior: 'smooth' }); }, 100); }}
+          className="mt-8 inline-block bg-[#FF7F00] text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-orange-600 transition-colors"
+        >
+          See Our Approach
+        </button>
+      </section>
+
+      {/* The Need */}
+      <section id="the-need" className="my-16 text-center">
+        <h2 className="text-3xl font-bold mb-8 text-[#333333]">The Future of Flight Requires Groundbreaking Infrastructure</h2>
+        <p className="max-w-3xl mx-auto text-lg mb-12">
+          As electric vertical takeoff and landing (eVTOL) aircraft prepare for commercial launch, the critical need for purpose-built landing, charging, and maintenance infrastructure becomes paramount.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-white rounded-2xl shadow-lg p-6 kpi-card">
+            <div className="text-5xl mb-4 text-[#FF7F00]">🏙️</div>
+            <h3 className="text-xl font-bold mb-2 text-[#333333]">Urban Integration</h3>
+            <p className="text-gray-700">Distributed, accessible vertiports woven into city mobility hubs.</p>
+          </div>
+          <div className="bg-white rounded-2xl shadow-lg p-6 kpi-card">
+            <div className="text-5xl mb-4 text-[#FF7F00]">🔌</div>
+            <h3 className="text-xl font-bold mb-2 text-[#333333]">High-Speed Charging</h3>
+            <p className="text-gray-700">Rapid, high-power charging for quick turnarounds and high uptime.</p>
+          </div>
+          <div className="bg-white rounded-2xl shadow-lg p-6 kpi-card">
+            <div className="text-5xl mb-4 text-[#FF7F00]">🛡️</div>
+            <h3 className="text-xl font-bold mb-2 text-[#333333]">Safety & Regulation</h3>
+            <p className="text-gray-700">Aviation-grade safety, airspace integration, and evolving codes.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Approach */}
+      <section id="our-approach" className="my-16 bg-[#333333] text-white rounded-2xl p-8 md:p-12 shadow-xl">
+        <h2 className="text-3xl font-bold text-center mb-10 text-[#FF7F00]">Our Approach to Vertiport Development & Ownership</h2>
+        <p className="max-w-3xl mx-auto text-center text-lg mb-12">
+          AVIM provides end-to-end expertise in designing, building, owning, and operating advanced vertiports, empowering air taxi companies to focus on flight operations.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+            <MapPin className="h-8 w-8 text-[#FF7F00] mb-3" />
+            <h3 className="text-xl font-bold mb-2 text-[#333333]">1. Strategic Site Selection</h3>
+            <p className="text-gray-700 text-sm">Data-driven locationing across rooftops, elevated structures, and ground sites with strong intermodal access.</p>
+          </div>
+          <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+            <Scale className="h-8 w-8 text-[#FF7F00] mb-3" />
+            <h3 className="text-xl font-bold mb-2 text-[#333333]">2. Permitting & Regulatory</h3>
+            <p className="text-gray-700 text-sm">FAA coordination, local zoning, environmental review, and code compliance from start to finish.</p>
+          </div>
+          <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+            <Layout className="h-8 w-8 text-[#FF7F00] mb-3" />
+            <h3 className="text-xl font-bold mb-2 text-[#333333]">3. Advanced Design</h3>
+            <p className="text-gray-700 text-sm">Pads, charging, lounges, baggage, and MRO bays designed for safety, throughput, and passenger experience.</p>
+          </div>
+          <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+            <HardHat className="h-8 w-8 text-[#FF7F00] mb-3" />
+            <h3 className="text-xl font-bold mb-2 text-[#333333]">4. Construction & Delivery</h3>
+            <p className="text-gray-700 text-sm">Modular methods to accelerate timelines and reduce cost while meeting aviation standards.</p>
+          </div>
+          <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+            <Globe className="h-8 w-8 text-[#FF7F00] mb-3" />
+            <h3 className="text-xl font-bold mb-2 text-[#333333]">5. Operations & Maintenance</h3>
+            <p className="text-gray-700 text-sm">We own and operate: charging orchestration, predictive maintenance, airspace/ATC integration, and passenger flows.</p>
+          </div>
+          <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center">
+            <Handshake className="h-8 w-8 text-[#FF7F00] mb-3" />
+            <h3 className="text-xl font-bold mb-2 text-[#333333]">6. Partner Integration</h3>
+            <p className="text-gray-700 text-sm">“Vertiport-as-a-Service” with eVTOL OEMs and operators—offloading CapEx/OpEx for faster network growth.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section id="contact" className="my-16 text-center">
+        <h2 className="text-3xl font-bold mb-6 text-[#333333]">Ready for the Skies?</h2>
+        <p className="max-w-2xl mx-auto text-lg mb-8">Partner with AVIM to lay the groundwork for a seamless urban air mobility future.</p>
+        <button onClick={() => handleNavClick('home', 'contact')} className="bg-[#FF7F00] text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-orange-600 transition-colors">
+          Contact Us About Air Mobility
+        </button>
+      </section>
+    </>
+  );
+
+  // FUTURE TIMELINE PAGE
+  const FutureTimelinePage = () => (
+    <>
+      <div className="relative -mx-4 md:-mx-8 bg-gradient-to-br from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a] min-h-screen p-8 md:p-12">
+        {/* center line */}
+        <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-1 bg-gradient-to-b from-white/30 via-white/80 to-white/30 pointer-events-none hidden md:block" />
+        <div className="absolute inset-y-0 left-8 w-1 bg-gradient-to-b from-white/30 via-white/80 to-white/30 pointer-events-none md:hidden" />
+
+        {/* header */}
+        <div className="text-center text-white mb-16">
+          <h1 className="text-4xl md:text-6xl font-black mb-6">The Autonomous Vehicle Revolution</h1>
+          <p className="text-xl md:text-2xl opacity-95 max-w-4xl mx-auto">Building the infrastructure for tomorrow's self-driving world</p>
+        </div>
+
+        <div className="relative max-w-6xl mx-auto pb-12 space-y-20">
+          {/* TODAY */}
+          <div className="relative">
+            <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 z-10 bg-gradient-to-r from-[#FF7F00] to-[#FF9933] text-white font-bold px-6 py-2 rounded-full shadow-lg whitespace-nowrap">
+              TODAY
+            </div>
+            <div className="bg-white rounded-2xl p-8 ml-auto w-full md:w-5/12 shadow-2xl">
+              <h3 className="text-2xl font-bold mb-4 text-[#FF7F00] flex items-center">
+                <span className="text-3xl mr-3">🚗</span> The Beginning: Waymo's Rollout
+              </h3>
+              <p className="text-gray-700 mb-6">Autonomous vehicles are slowly being deployed in select cities. The foundation is being laid for a transportation revolution.</p>
+              <ul className="space-y-3">
+                {[
+                  'Waymo operating in Phoenix, San Francisco, LA',
+                  'Limited service areas with safety drivers',
+                  'Public getting comfortable with AV technology',
+                  'Early adopters testing the waters'
+                ].map((t, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-[#FF7F00] font-bold text-xl mr-3">→</span>
+                    <span className="text-gray-600">{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* 1–2 YEARS */}
+          <div className="relative">
+            <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 z-10 bg-gradient-to-r from-[#FF7F00] to-[#FF9933] text-white font-bold px-6 py-2 rounded-full shadow-lg whitespace-nowrap">
+              1–2 YEARS
+            </div>
+            <div className="bg-white rounded-2xl p-8 mr-auto w-full md:w-5/12 shadow-2xl">
+              <h3 className="text-2xl font-bold mb-4 text-[#FF7F00] flex items-center">
+                <span className="text-3xl mr-3">🌆</span> Rapid Expansion
+              </h3>
+              <p className="text-gray-700 mb-6">AV services expand to most major US cities. Competition heats up as multiple players enter.</p>
+              <ul className="space-y-3">
+                {[
+                  'Waymo, Cruise, Zoox in 20+ cities',
+                  'Tesla robotaxis joining the fleet',
+                  'Price competition driving adoption',
+                  'Infrastructure gaps becoming apparent'
+                ].map((t, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-[#FF7F00] font-bold text-xl mr-3">→</span>
+                    <span className="text-gray-600">{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* 2–3 YEARS (AVIM ENTERS) */}
+          <div className="relative">
+            <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 z-10 bg-gradient-to-r from-[#FF7F00] to-[#FF9933] text-white font-bold px-6 py-2 rounded-full shadow-lg whitespace-nowrap">
+              2–3 YEARS
+            </div>
+            <div className="bg-white rounded-2xl p-8 ml-auto w-full md:w-5/12 shadow-2xl">
+              <h3 className="text-2xl font-bold mb-4 text-[#FF7F00] flex items-center">
+                <span className="text-3xl mr-3">⚡</span>
+                The Charging Crisis
+                <span className="ml-3 bg-gradient-to-r from-[#FF7F00] to-[#ff4517] text-white px-3 py-0.5 rounded-full text-xs font-bold">
+                  AVIM ENTERS
+                </span>
+              </h3>
+              <p className="text-gray-700 mb-6">
+                Thousands of AVs need charging infrastructure. <span className="bg-gradient-to-r from-[#FF7F00] to-[#FF9933] text-white px-1.5 py-0.5 rounded font-semibold">This is where AVIM comes in</span>—building the network fleets need.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  'AVIM charging hubs throughout cities',
+                  'Strategic conversions of high-visibility parcels',
+                  'Fast-charging optimized for fleets',
+                  '24/7 automated charging operations',
+                  'Fleet management system integration'
+                ].map((t, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-[#FF7F00] font-bold text-xl mr-3">→</span>
+                    <span className="text-gray-600">{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* 3–5 YEARS */}
+          <div className="relative">
+            <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 z-10 bg-gradient-to-r from-[#FF7F00] to-[#FF9933] text-white font-bold px-6 py-2 rounded-full shadow-lg whitespace-nowrap">
+              3–5 YEARS
+            </div>
+            <div className="bg-white rounded-2xl p-8 mr-auto w-full md:w-5/12 shadow-2xl">
+              <h3 className="text-2xl font-bold mb-4 text-[#FF7F00] flex items-center">
+                <span className="text-3xl mr-3">🏠</span> Personal AV Ownership Era
+              </h3>
+              <p className="text-gray-700 mb-6">Consumers own AVs that work while they do. AVIM serves fleets and individuals.</p>
+              <ul className="space-y-3">
+                {[
+                  'Cars drop owners at work, then earn as taxis',
+                  'Home wireless charging pads',
+                  'AVIM public charging for personal AVs',
+                  'Subscription plans for individuals',
+                  'Errands run autonomously'
+                ].map((t, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-[#FF7F00] font-bold text-xl mr-3">→</span>
+                    <span className="text-gray-600">{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* 5+ YEARS */}
+          <div className="relative">
+            <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 z-10 bg-gradient-to-r from-[#FF7F00] to-[#FF9933] text-white font-bold px-6 py-2 rounded-full shadow-lg whitespace-nowrap">
+              5+ YEARS
+            </div>
+            <div className="bg-white rounded-2xl p-8 ml-auto w-full md:w-5/12 shadow-2xl">
+              <h3 className="text-2xl font-bold mb-4 text-[#FF7F00] flex items-center">
+                <span className="text-3xl mr-3">🏪</span> Complete Infrastructure Transformation
+              </h3>
+              <p className="text-gray-700 mb-6">Every business adapts to AV operations. AVIM becomes the backbone provider.</p>
+              <ul className="space-y-3">
+                {[
+                  'Dedicated AV lanes at stores and restaurants',
+                  'Automated pickup/dropoff zones everywhere',
+                  'AVIM managing charging, parking, logistics',
+                  'Smart city integration with traffic systems',
+                  'Urban planning transformed'
+                ].map((t, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-[#FF7F00] font-bold text-xl mr-3">→</span>
+                    <span className="text-gray-600">{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center mt-20 p-12 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border-2 border-[#FF7F00] shadow-2xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#FF7F00]">Building Tomorrow's Infrastructure Today</h2>
+          <p className="text-gray-300 text-lg mb-8 max-w-3xl mx-auto">
+            AVIM is positioning itself at the center of the autonomous vehicle revolution, creating the essential charging and management infrastructure that will power the future of transportation.
+          </p>
+          <button
+            onClick={() => handleNavClick('home', 'contact')}
+            className="bg-gradient-to-r from-[#FF7F00] to-[#FF9933] text-white font-bold py-4 px-10 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all"
+          >
+            Join the Revolution
+          </button>
+        </div>
+      </div>
+    </>
+  );
+
+  // ROUTER
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'groundSolutions':
+        return <GroundSolutionsPage />;
+      case 'airTaxiSolutions':
+        return <AirTaxiSolutionsPage />;
+      case 'timeline':
+        return <FutureTimelinePage />;
+      case 'home':
+      default:
+        return <HomePage />;
+    }
+  };
+
+  // APP SHELL
+  return (
+    <div className="bg-[#F8F8F8] text-[#333333] min-h-screen">
+      {/* Nav */}
+      <nav className="bg-[#FFFFFF] shadow-md py-4 sticky top-0 z-50">
+        <div className="container mx-auto flex justify-between items-center px-4 md:px-8">
+          <button onClick={() => setCurrentPage('home')} className="text-2xl font-black text-[#FF7F00]">AVIM</button>
+          <div className="space-x-4 md:space-x-6">
+            <button onClick={() => handleNavClick('home', 'home')} className="text-[#333333] hover:text-[#FF7F00] font-semibold hidden md:inline-block">Home</button>
+            <button onClick={() => handleNavClick('home', 'services')} className="text-[#333333] hover:text-[#FF7F00] font-semibold hidden md:inline-block">Services</button>
+            <button onClick={() => setCurrentPage('groundSolutions')} className="text-[#333333] hover:text-[#FF7F00] font-semibold">Ground AV</button>
+            <button onClick={() => setCurrentPage('airTaxiSolutions')} className="text-[#333333] hover:text-[#FF7F00] font-semibold">Air Taxi</button>
+            <button onClick={() => handleNavClick('home', 'infographic-section')} className="text-[#333333] hover:text-[#FF7F00] font-semibold hidden md:inline-block">Our Vision</button>
+            <button onClick={() => setCurrentPage('timeline')} className="text-[#333333] hover:text-[#FF7F00] font-semibold">Timeline</button>
+            <button onClick={() => handleNavClick('home', 'contact')} className="bg-[#FF7F00] text-white px-4 py-2 rounded-full font-semibold hover:bg-orange-600 transition-colors">
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Page content */}
+      <div className="container mx-auto p-4 md:p-8">
+        {renderPage()}
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-[#333333] text-white text-center py-8 mt-16">
+        <p>&copy; {new Date().getFullYear()} AVIM. All rights reserved.</p>
+        <div className="mt-4 space-x-4">
+          <a href="#" className="text-white hover:text-[#FF7F00]">Privacy Policy</a>
+          <a href="#" className="text-white hover:text-[#FF7F00]">Terms of Service</a>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
